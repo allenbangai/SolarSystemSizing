@@ -38,15 +38,7 @@ public class SolarSizing {
         switch(sizingType){
             case 1:
                 System.out.println("Here, you will have the sizing "
-                        + "of your system from the total energy of the system inputed");
-                break;
-            case 2:
-                System.out.println("Here, you will have the sizing of your system"
-                        + " from the total power of the system and the total time of autonomy of all device inputed");
-                break;
-            case 3:
-                System.out.println("Here, you will have the sizing of your system from the total individual"
-                        + " power, number of loads and hours of autonomu for each device of the system inputed");
+                        + "of your system from the total energy of the system inputed with the number of hours of autonomy");
                 total = new TEnergy(4000, 5);
                 stmMaxEnergy = total.totalE();
                 stmMaxPower = total.totalP();
@@ -54,9 +46,9 @@ public class SolarSizing {
                 inverterSizing = new InverterSizing(Store.getInverters(), (int) stmMaxPower);
                 batterySizing = new BatterySizing(Store.getBatteries(), stmMaxEnergy, inverterSizing.getInverter());
                 break;
-            case 4:
-                System.out.println("Here, you will have the sizing of your system from the total ");
-                System.out.println("Individual power and number of load for each device of the system inputed");
+            case 2:
+                System.out.println("Here, you will have the sizing of your system"
+                        + " from the total power of the system and the total time of autonomy of all as a hole device inputed");
                 total = new TPower(2000, 5);
                 stmMaxEnergy = total.totalE();
                 stmMaxPower = total.totalP();
@@ -66,6 +58,14 @@ public class SolarSizing {
                 inverterSizing.setInverterVoltage(24);
                 batterySizing = new BatterySizing(Store.getBatteries(), stmMaxEnergy, inverterSizing.getInverter());
                 batterySizing.setBatteryVoltage(12);
+                break;
+            case 3:
+                System.out.println("Here, you will have the sizing of your system from the total individual"
+                        + " power, number of loads and hours of autonomu for each device of the system inputed");
+                break;
+            case 4:
+                System.out.println("Here, you will have the sizing of your system from the total ");
+                System.out.println("Individual power and number of load for each device of the system inputed");
                 break;
         }
         System.out.println("\nSystem Energy is: "+ stmMaxEnergy + "Ah and System power is: "+stmMaxPower + "W.");
