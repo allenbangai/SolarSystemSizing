@@ -62,10 +62,12 @@ public class SolarSizing {
             case 3:
                 System.out.println("Here, you will have the sizing of your system from the total individual"
                         + " power, number of loads and hours of autonomu for each device of the system inputed");
+                System.exit(0);
                 break;
             case 4:
                 System.out.println("Here, you will have the sizing of your system from the total ");
                 System.out.println("Individual power and number of load for each device of the system inputed");
+                System.exit(0);
                 break;
         }
         System.out.println("\nSystem Energy is: "+ stmMaxEnergy + "Ah and System power is: "+stmMaxPower + "W.");
