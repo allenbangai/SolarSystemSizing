@@ -40,7 +40,7 @@ public class ChargeController{
      * contructors for describing the same obects with differnt rated output voltage. The 
      * value entered is in volts (VDC)
      */
-    public ChargeController(int minInputCurrent, int maxInputCurrent, int maxInputVoltage, int ratedVoltage) {
+    public ChargeController(int maxInputVoltage, int ratedVoltage) {
         this.minInputCurrent = minInputCurrent;
         this.maxInputCurrent = maxInputCurrent;
         this.maxInputVoltage = maxInputVoltage;
