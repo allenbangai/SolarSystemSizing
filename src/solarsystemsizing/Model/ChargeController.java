@@ -47,6 +47,22 @@ public class ChargeController{
         this.ratedVoltage = ratedVoltage;
     }
 
+    /**
+     * 
+     * @param maxInputVoltage
+     * The {@link #maxInputVoltage} is the voltage solar panel supply should not exceed and 
+     * must be below or the solar panel supply should not exceed. The value entered is in 
+     * volts (VDC).
+     * @param maxInputPower
+     * @param ratedVoltage
+     * This is the output {@link #ratedVoltage} released to the batteries in other to charge the 
+     * battery. For certain cases, the controller can have somany different types of rated 
+     * output voltage eiher due to differnt number of output ports or can varry automatically 
+     * as it adapts to the receiving voltage of the battery. In this case, we use different 
+     * contructors for describing the same obects with differnt rated output voltage. The 
+     * value entered is in volts (VDC)
+     * @param ratedCurrent
+     */
     public ChargeController(int maxInputVoltage, int maxInputPower, int ratedVoltage, int ratedCurrent){
         this.maxInputVoltage = maxInputVoltage;
         this.maxInputPower = maxInputPower;
@@ -54,6 +70,21 @@ public class ChargeController{
         this.ratedCurrent = ratedCurrent;
     }
 
+    /**
+     * 
+     * @param maxInputVoltage
+     * The {@link #maxInputVoltage} is the voltage solar panel supply should not exceed and 
+     * must be below or the solar panel supply should not exceed. The value entered is in 
+     * volts (VDC).
+     * @param ratedVoltage
+     * This is the output {@link #ratedVoltage} released to the batteries in other to charge the 
+     * battery. For certain cases, the controller can have somany different types of rated 
+     * output voltage eiher due to differnt number of output ports or can varry automatically 
+     * as it adapts to the receiving voltage of the battery. In this case, we use different 
+     * contructors for describing the same obects with differnt rated output voltage. The 
+     * value entered is in volts (VDC)
+     * @param ratedCurrent
+     */
     public ChargeController(int maxInputVoltage, int ratedVoltage, int ratedCurrent){
         this.maxInputVoltage = maxInputVoltage;
         this.ratedVoltage = ratedVoltage;
