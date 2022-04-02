@@ -39,10 +39,18 @@ public class ChargeController{
      * as it adapts to the receiving voltage of the battery. In this case, we use different 
      * contructors for describing the same obects with differnt rated output voltage. The 
      * value entered is in volts (VDC)
+     * @param ratedCurrent
+     * This is the output {@link #ratedCurrent} the charge controller will send to the batteries 
+     * when charging the batteries. This current can be calculated from the panels total power 
+     * devided by system DC voltage. When making choice of inverter, you optained output current 
+     * be closest as possible to this value. the value intered is in current (ADC).
      */
-    public ChargeController(int maxInputVoltage, int ratedVoltage) {
+    public ChargeController(int maxInputVoltage, int ratedVoltage, int ratedCurrent, int maxInputCurrent, int minInputCurrent) {
         this.maxInputVoltage = maxInputVoltage;
         this.ratedVoltage = ratedVoltage;
+        this.maxInputCurrent = maxInputCurrent;
+        this.minInputCurrent = minInputCurrent;
+        this.ratedCurrent = ratedCurrent;
     }
 
     /**
