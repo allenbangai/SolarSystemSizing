@@ -9,16 +9,20 @@ package solarsystemsizing.Sizing;
  * @author Kamadje Allen
  */
 public class ChargeControllerSizing {
-    private InverterSizing inverterSizing;
-    private PanelSizing panelSizing;
-    
+    private int systemDCVoltage;
+    private int panelOCVoltage;
+    private int panelTotalPower;
+    private int batteriesChargingCurrent;
+
     public ChargeControllerSizing(){
 
     }
 
     public ChargeControllerSizing(InverterSizing inverterSizing, PanelSizing panelSizing) {
-        this.inverterSizing = inverterSizing;
-        this.panelSizing = panelSizing;
+        this.systemDCVoltage = inverterSizing.getInverter().getDCinput();
+        this.panelOCVoltage = panelSizing.getPanelConnection().getSeriesConnection() * panelSizing.getPanel().getNominalVoltage();
+        this.panelTotalPower = panelSizing.getPanelNumber() * panelSizing.getPanel().getPower();
+        this.batteriesChargingCurrent = this.panelTotalPower / this.systemDCVoltage;
     }
 
 }
