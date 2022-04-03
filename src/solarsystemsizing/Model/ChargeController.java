@@ -12,12 +12,12 @@ package solarsystemsizing.Model;
  * @author Kamadje Allen
  */
 public class ChargeController{
-    private int minInputCurrent;
-    private int maxInputCurrent;
-    private int maxInputVoltage;
-    private int ratedCurrent;
-    private int maxInputPower;
-    private int ratedVoltage;
+    private int minInputCurrent = 0;
+    private int maxInputCurrent = 0;
+    private int maxInputVoltage = 0;
+    private int ratedChargeCurrent = 0;
+    private int ratedChargeVoltage = 0;
+    private int ratedChargePower = 0;
 
     /**
      * This constructor represents the charateristics that the objects of the class 
@@ -33,24 +33,24 @@ public class ChargeController{
      * must be below or the solar panel supply should not exceed. The value entered is in 
      * volts (VDC).
      * @param ratedVoltage
-     * This is the output {@link #ratedVoltage} released to the batteries in other to charge the 
+     * This is the output {@link #ratedChargeVoltage} released to the batteries in other to charge the 
      * battery. For certain cases, the controller can have somany different types of rated 
      * output voltage eiher due to differnt number of output ports or can varry automatically 
      * as it adapts to the receiving voltage of the battery. In this case, we use different 
      * contructors for describing the same obects with differnt rated output voltage. The 
      * value entered is in volts (VDC)
      * @param ratedCurrent
-     * This is the output {@link #ratedCurrent} the charge controller will send to the batteries 
+     * This is the output {@link #ratedChargeCurrent} the charge controller will send to the batteries 
      * when charging the batteries. This current can be calculated from the panels total power 
      * devided by system DC voltage. When making choice of inverter, you optained output current 
      * be closest as possible to this value. the value intered is in current (ADC).
      */
     public ChargeController(int maxInputVoltage, int ratedVoltage, int ratedCurrent, int maxInputCurrent, int minInputCurrent) {
         this.maxInputVoltage = maxInputVoltage;
-        this.ratedVoltage = ratedVoltage;
+        this.ratedChargeVoltage = ratedVoltage;
         this.maxInputCurrent = maxInputCurrent;
         this.minInputCurrent = minInputCurrent;
-        this.ratedCurrent = ratedCurrent;
+        this.ratedChargeCurrent = ratedCurrent;
     }
 
     /**
@@ -59,28 +59,28 @@ public class ChargeController{
      * The {@link #maxInputVoltage} is the voltage solar panel supply should not exceed and 
      * must be below or the solar panel supply should not exceed. The value entered is in 
      * volts (VDC).
-     * @param maxInputPower
-     * There is a {@link #maxInputPower} that the charge controller can take from the array connections
+     * @param ratedChargePower
+     * There is a {@link #ratedChargePower} that the charge controller can take from the array connections
      * of panels. Hence when selecting a charge controller, it should never be less than the total 
      * power of the panels. The value entered is in Watts (W).
      * @param ratedVoltage
-     * This is the output {@link #ratedVoltage} released to the batteries in other to charge the 
+     * This is the output {@link #ratedChargeVoltage} released to the batteries in other to charge the 
      * battery. For certain cases, the controller can have somany different types of rated 
      * output voltage eiher due to differnt number of output ports or can varry automatically 
      * as it adapts to the receiving voltage of the battery. In this case, we use different 
      * contructors for describing the same obects with differnt rated output voltage. The 
      * value entered is in volts (VDC)
      * @param ratedCurrent
-     * This is the output {@link #ratedCurrent} the charge controller will send to the batteries 
+     * This is the output {@link #ratedChargeCurrent} the charge controller will send to the batteries 
      * when charging the batteries. This current can be calculated from the panels total power 
      * devided by system DC voltage. When making choice of inverter, you optained output current 
      * be closest as possible to this value. the value intered is in current (ADC).
      */
-    public ChargeController(int maxInputVoltage, int maxInputPower, int ratedVoltage, int ratedCurrent){
+    public ChargeController(int maxInputVoltage, int ratedChargePower, int ratedVoltage, int ratedCurrent){
         this.maxInputVoltage = maxInputVoltage;
-        this.maxInputPower = maxInputPower;
-        this.ratedVoltage = ratedVoltage;
-        this.ratedCurrent = ratedCurrent;
+        this.ratedChargePower = ratedChargePower;
+        this.ratedChargeVoltage = ratedVoltage;
+        this.ratedChargeCurrent = ratedCurrent;
     }
 
     /**
@@ -90,14 +90,14 @@ public class ChargeController{
      * must be below or the solar panel supply should not exceed. The value entered is in 
      * volts (VDC).
      * @param ratedVoltage
-     * This is the output {@link #ratedVoltage} released to the batteries in other to charge the 
+     * This is the output {@link #ratedChargeVoltage} released to the batteries in other to charge the 
      * battery. For certain cases, the controller can have somany different types of rated 
      * output voltage eiher due to differnt number of output ports or can varry automatically 
      * as it adapts to the receiving voltage of the battery. In this case, we use different 
      * contructors for describing the same obects with differnt rated output voltage. The 
      * value entered is in volts (VDC)
      * @param ratedCurrent
-     * This is the output {@link #ratedCurrent} the charge controller will send to the batteries 
+     * This is the output {@link #ratedChargeCurrent} the charge controller will send to the batteries 
      * when charging the batteries. This current can be calculated from the panels total power 
      * devided by system DC voltage. When making choice of inverter, you optained output current 
      * be closest as possible to this value 
@@ -105,8 +105,8 @@ public class ChargeController{
      */
     public ChargeController(int maxInputVoltage, int ratedVoltage, int ratedCurrent){
         this.maxInputVoltage = maxInputVoltage;
-        this.ratedVoltage = ratedVoltage;
-        this.ratedCurrent = ratedCurrent;
+        this.ratedChargeVoltage = ratedVoltage;
+        this.ratedChargeCurrent = ratedCurrent;
 
     }
 
@@ -143,10 +143,25 @@ public class ChargeController{
      * as it adapts to the receiving voltage of the battery. In this case, we use different 
      * contructors for describing the same obects with differnt rated output voltage. 
      * @return
-     * This method returns the output {@link #ratedVoltage} that the charge controller supplies to or 
+     * This method returns the output {@link #ratedChargeVoltage} that the charge controller supplies to or 
      * rerceives from the batery.
      */
-    public int getRatedVoltage() {
-        return ratedVoltage;
+    public int getRatedChargeVoltage() {
+        return ratedChargeVoltage;
     }
+
+    /**
+     * @return int return the ratedChargeCurrent
+     */
+    public int getRatedChargeCurrent() {
+        return ratedChargeCurrent;
+    }
+
+    /**
+     * @return int return the ratedChargePower
+     */
+    public int getRatedChargePower() {
+        return ratedChargePower;
+    }
+
 }
