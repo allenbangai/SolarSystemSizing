@@ -10,30 +10,15 @@ package solarsystemsizing.Sizing;
  */
 public class ChargeControllerSizing {
     private InverterSizing inverterSizing;
-    private int stmDCVoltage;
+    private PanelSizing panelSizing;
+    
     public ChargeControllerSizing(){
 
     }
 
-    public ChargeControllerSizing(InverterSizing inverterSizing, int stmDCVoltage) {
+    public ChargeControllerSizing(InverterSizing inverterSizing, PanelSizing panelSizing) {
         this.inverterSizing = inverterSizing;
-        this.stmDCVoltage = stmDCVoltage;
-    }
-
-    public InverterSizing getInverterSizing() {
-        return this.inverterSizing;
-    }
-
-    public int getStmDCVoltage() {
-        return this.stmDCVoltage;
-    }
-
-    @Override
-    public String toString() {
-        return "\n{" +
-            "\n inverterSizing= '" + getInverterSizing() +
-            "',\n stmDCVoltage= '" + getStmDCVoltage() +
-            "'}";
+        this.panelSizing = panelSizing;
     }
 
 }
