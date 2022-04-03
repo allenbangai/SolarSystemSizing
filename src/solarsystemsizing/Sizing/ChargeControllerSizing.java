@@ -66,4 +66,10 @@ public class ChargeControllerSizing {
         return chargeControllers;
     }
 
+    public ChargeController getChargeController(){
+        ChargeController chargeController = getChargeControllers().get(0);
+        
+        return chargeController;
+    }
+
 }
