@@ -1,5 +1,9 @@
 package solarsystemsizing.Sizing;
 
+import java.util.ArrayList;
+
+import solarsystemsizing.Model.ChargeController;
+
 /**
  * 
  * @since 1.0
@@ -13,19 +17,20 @@ public class ChargeControllerSizing {
     private int panelOCVoltage;
     private int panelTotalPower;
     private int batteriesChargingCurrent;
+    private ArrayList<ChargeController> chargeControllers;
 
     public ChargeControllerSizing(){
 
     }
 
-    public ChargeControllerSizing(InverterSizing inverterSizing, PanelSizing panelSizing) {
+    public ChargeControllerSizing(InverterSizing inverterSizing, PanelSizing panelSizing, ArrayList<ChargeController> chargeControllers) {
         this.systemDCVoltage = inverterSizing.getInverter().getDCinput();
         this.panelOCVoltage = panelSizing.getPanelConnection().getSeriesConnection() * panelSizing.getPanel().getNominalVoltage();
         this.panelTotalPower = panelSizing.getPanelNumber() * panelSizing.getPanel().getPower();
         this.batteriesChargingCurrent = this.panelTotalPower / this.systemDCVoltage;
+        this.chargeControllers = chargeControllers;
     }
-
-
+    
     /**
      * @return int return the systemDCVoltage
      */
@@ -52,6 +57,13 @@ public class ChargeControllerSizing {
      */
     public int getBatteriesChargingCurrent() {
         return batteriesChargingCurrent;
+    }
+
+    /**
+     * @return the chargeControllers
+     */
+    public ArrayList<ChargeController> getChargeControllers() {
+        return chargeControllers;
     }
 
 }
