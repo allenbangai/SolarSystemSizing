@@ -25,4 +25,33 @@ public class ChargeControllerSizing {
         this.batteriesChargingCurrent = this.panelTotalPower / this.systemDCVoltage;
     }
 
+
+    /**
+     * @return int return the systemDCVoltage
+     */
+    public int getSystemDCVoltage() {
+        return systemDCVoltage;
+    }
+
+    /**
+     * @return int return the panelOCVoltage
+     */
+    public int getPanelOCVoltage() {
+        return panelOCVoltage;
+    }
+
+    /**
+     * @return int return the panelTotalPower
+     */
+    public int getPanelTotalPower() {
+        return panelTotalPower;
+    }
+
+    /**
+     * @return int return the batteriesChargingCurrent
+     */
+    public int getBatteriesChargingCurrent() {
+        return batteriesChargingCurrent;
+    }
+
 }
