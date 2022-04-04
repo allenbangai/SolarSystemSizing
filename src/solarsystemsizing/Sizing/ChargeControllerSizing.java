@@ -67,9 +67,19 @@ public class ChargeControllerSizing {
     }
 
     public ChargeController getChargeController(){
-        ChargeController chargeController = getChargeControllers().get(0);
-        
-        return chargeController;
+        ArrayList<ChargeController> actualControllers = new ArrayList<>();
+        ChargeController actualController = getChargeControllers().get(0);
+
+        //filtering controllers from list of controllers by system voltage
+        for (ChargeController chargeController : chargeControllers) {
+            if(getSystemDCVoltage() == chargeController.getRatedChargeVoltage() && 
+            getBatteriesChargingCurrent() < chargeController.getRatedChargeCurrent() && 
+            getPanelOCVoltage() < chargeController.getMaxInputVoltage()){
+                actualControllers.add(chargeController);
+            }
+        }
+        return actualController;
+        //implementing code in ChargeController.java part 4: declaring and implementing getChargeControlloer() method part 1
     }
 
 }
