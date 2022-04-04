@@ -70,7 +70,7 @@ public class ChargeControllerSizing {
         ArrayList<ChargeController> actualControllers = new ArrayList<>();
         ChargeController actualController = new ChargeController(0, 0, 0, 0);
 
-        //filtering controllers from list of controllers by system voltage
+        //part 1: filtering controllers from list of controllers by system voltage
         for (ChargeController chargeController : getChargeControllers()) {
             if(getSystemDCVoltage() == chargeController.getRatedChargeVoltage() && 
             getBatteriesChargingCurrent() < chargeController.getRatedChargeCurrent() && 
@@ -79,6 +79,7 @@ public class ChargeControllerSizing {
             }
         }
 
+        //part 2: getting the actual charge controller
         if (actualControllers.size() > 1) {
             int i = 0;
             int diff = 0;
@@ -99,5 +100,25 @@ public class ChargeControllerSizing {
         return actualController;
         //implementing code in ChargeController.java part 4: declaring and implementing getChargeControlloer() method part 1
     }
+
+    @Override
+    public String toString() {
+        return "\nThe Charge Controller Sizing is as folows {" +
+            "\n The charge controller battery voltage= '" + getChargeController().getRatedChargeVoltage() + 
+            "V',\n The charge controller maximum panel voltage= '" + getChargeController().getMaxInputVoltage() + 
+            "V',\n The charge controller maximum panel power= '" + getChargeController().getRatedChargePower() + 
+            "W',\n The charge controller output charging current= '" + getChargeController().getRatedChargeCurrent() + 
+            "A'\n}";
+    }
+
+    public String toStringResult() {
+        return "\nThe Charge Controller parameters are as folows {" +
+            "\n The system DC voltage= '" + getSystemDCVoltage() + 
+            "V',\n The panel open circuit voltage= '" + getPanelOCVoltage() + 
+            "V',\n The panel total power= '" + getPanelTotalPower() + 
+            "W',\n The batteries charging current= '" + getBatteriesChargingCurrent() + 
+            "A'\n}";
+    }
+
 
 }

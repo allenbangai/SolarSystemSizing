@@ -149,6 +149,6 @@ public class InverterSizing {
         "\n Inverter input DC Voltage= '" + getInverter().getDCinput() +
         "V',\n Inverter output rated power= '" + getInverter().getRatedWatt() + 
         "W',\n Inverter output rated voltage= '" + "220/240" +
-        "'}";
+        "'}\n";
     }
 }
