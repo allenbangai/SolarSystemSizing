@@ -68,7 +68,7 @@ public class ChargeControllerSizing {
 
     public ChargeController getChargeController(){
         ArrayList<ChargeController> actualControllers = new ArrayList<>();
-        ChargeController actualController = getChargeControllers().get(0);
+        ChargeController actualController = new ChargeController(0, 0, 0, 0);
 
         //filtering controllers from list of controllers by system voltage
         for (ChargeController chargeController : getChargeControllers()) {
@@ -90,7 +90,7 @@ public class ChargeControllerSizing {
                 }
                 i++;
                 if(diff >= init){
-                    diff = init;
+                    actualController = chargeController;
                 }
             }
         } else {
