@@ -112,7 +112,7 @@ public class ChargeControllerSizing {
     }
 
     public String toStringResult() {
-        return "\nThe Charge Controller parameters are as folows {" +
+        return "\nThe Charge Controller parameters calculated are as folows {" +
             "\n The system DC voltage= '" + getSystemDCVoltage() + 
             "V',\n The panel open circuit voltage= '" + getPanelOCVoltage() + 
             "V',\n The panel total power= '" + getPanelTotalPower() + 
