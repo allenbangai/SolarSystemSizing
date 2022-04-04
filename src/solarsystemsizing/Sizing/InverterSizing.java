@@ -107,59 +107,6 @@ public class InverterSizing {
                 }
             }
         }
-
-        /*
-        //part 1
-        i = 0;
-        for(Inverter inverter: inverters){
-            inverterRatedWatt = inverter.getRatedWatt();
-            if(inverterRatedWatt > systemMaxPower){
-                init = inverterRatedWatt - systemMaxPower;
-                if(i == 0){
-                    diff = init;
-                }
-                i++;
-                if(diff >= init){
-                    diff = init;
-                }
-            }
-        }
-
-        //part 2
-        for(Inverter inverter: inverters){
-            inverterRatedWatt = inverter.getRatedWatt();
-            if(inverterRatedWatt > systemMaxPower){
-                init = inverterRatedWatt - systemMaxPower;
-                if(diff == init){
-                    inverList.add(inverter);
-                }
-            }
-        }
-
-        
-        //part 3
-        int i = 0;
-        for(Inverter inverter: inverList){
-            if(getInverterVoltage() == inverter.getDCinput()){
-                actualInverter = inverter;
-                break; //we break here because we have already obtained our desired inverter
-                // rated DC input voltage
-            }else{
-                /**
-                 * This condition is excuted if and only if an inverter is not found with
-                 * the system voltage dicided by the system or by the user.
-                 * Hence an inverter with the highest voltage is selected for sizing the system
-                 *
-                Inverter obj = inverter;
-                if(i == 0){
-                    actualInverter = inverter;
-                }
-                i++;
-                if(obj.getDCinput() >= actualInverter.getDCinput()){
-                    actualInverter = obj;
-                }
-            }
-        }*/
         return actualInverter;
     }
 
