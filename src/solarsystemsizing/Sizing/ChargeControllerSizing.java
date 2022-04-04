@@ -73,8 +73,8 @@ public class ChargeControllerSizing {
         //part 1: filtering controllers from list of controllers by system voltage
         for (ChargeController chargeController : getChargeControllers()) {
             if(getSystemDCVoltage() == chargeController.getRatedChargeVoltage() && 
-            getBatteriesChargingCurrent() < chargeController.getRatedChargeCurrent() && 
-            getPanelOCVoltage() < chargeController.getMaxInputVoltage() && getPanelTotalPower() < chargeController.getRatedChargePower() ){
+            getBatteriesChargingCurrent() <= chargeController.getRatedChargeCurrent() && 
+            getPanelOCVoltage() <= chargeController.getMaxInputVoltage() && getPanelTotalPower() < chargeController.getRatedChargePower() ){
                 actualControllers.add(chargeController);
             }
         }

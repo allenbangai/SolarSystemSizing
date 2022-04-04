@@ -76,7 +76,7 @@ public class ChargeController{
      * devided by system DC voltage. When making choice of inverter, you optained output current 
      * be closest as possible to this value. the value intered is in current (ADC).
      */
-    public ChargeController(int maxInputVoltage, int ratedChargePower, int ratedVoltage, int ratedCurrent){
+    public ChargeController(int ratedVoltage, int ratedCurrent, int maxInputVoltage, int ratedChargePower){
         this.maxInputVoltage = maxInputVoltage;
         this.ratedChargePower = ratedChargePower;
         this.ratedChargeVoltage = ratedVoltage;
@@ -103,7 +103,7 @@ public class ChargeController{
      * be closest as possible to this value 
      * 
      */
-    public ChargeController(int maxInputVoltage, int ratedVoltage, int ratedCurrent){
+    public ChargeController(int ratedVoltage, int ratedCurrent, int maxInputVoltage){
         this.maxInputVoltage = maxInputVoltage;
         this.ratedChargeVoltage = ratedVoltage;
         this.ratedChargeCurrent = ratedCurrent;
