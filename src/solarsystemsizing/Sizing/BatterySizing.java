@@ -158,7 +158,7 @@ public class BatterySizing {
             "Ah',\n Total number of batteries= '" + getBatteryNum() +
             "',\n Number of batteries in series= '" + getSeriesConnection() +
             "',\n Number of battteries in parrallel= '" + getParallelConnection() +
-            "'}\n";
+            "'\n}";
     }
 
     /**

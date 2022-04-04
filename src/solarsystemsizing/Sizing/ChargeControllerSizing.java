@@ -108,7 +108,7 @@ public class ChargeControllerSizing {
             "V',\n The charge controller maximum panel voltage= '" + getChargeController().getMaxInputVoltage() + 
             "V',\n The charge controller maximum panel power= '" + getChargeController().getRatedChargePower() + 
             "W',\n The charge controller output charging current= '" + getChargeController().getRatedChargeCurrent() + 
-            "A'\n}";
+            "A'\n}\n";
     }
 
     public String toStringResult() {
