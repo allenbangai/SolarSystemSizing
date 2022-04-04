@@ -40,13 +40,6 @@ public class InverterSizing {
         return systemMaxPower;
     }
 
-    /**
-     * @param systemMaxPower the systemMaxPower to set
-     */
-    public void setSystemMaxPower(int systemMaxPower) {
-        this.systemMaxPower = systemMaxPower;
-    }
-
     /***
      * 
      * @param inverterVoltage
@@ -77,11 +70,45 @@ public class InverterSizing {
     private Inverter findInverter(){
         Inverter actualInverter = new Inverter(0, 0);
         ArrayList<Inverter> inverList = new ArrayList<>();
-        int inverterRatedWatt;
-        int init;
-        int diff = 0;
-        int i;
 
+        int j = 0;
+        do {
+            if(j != 0){
+                if (getInverterVoltage() == inverterVoltage1) {
+                    setInverterVoltage(inverterVoltage2);
+                }else if(getInverterVoltage() == inverterVoltage2){
+                    setInverterVoltage(inverterVoltage3);
+                }else{
+                    setInverterVoltage(inverterVoltage2);
+                }
+            }
+
+            for (Inverter inverter : inverters) {
+                if(getInverterVoltage() == inverter.getDCinput() && getSystemMaxPower() <= inverter.getRatedWatt()){
+                    inverList.add(inverter);
+                }
+            }
+            
+            j++;
+        } while (inverList.isEmpty() && j <= 2);
+
+        if(!inverList.isEmpty()) {
+            int init;
+            int diff = 0;
+            int i = 0;
+            for (Inverter inverter : inverList) {
+                init = inverter.getRatedWatt() - getSystemMaxPower();
+                if(i == 0){
+                    diff = init;
+                }
+                i++;
+                if(diff >= init){
+                    actualInverter = inverter;
+                }
+            }
+        }
+
+        /*
         //part 1
         i = 0;
         for(Inverter inverter: inverters){
@@ -109,8 +136,9 @@ public class InverterSizing {
             }
         }
 
+        
         //part 3
-        i = 0;
+        int i = 0;
         for(Inverter inverter: inverList){
             if(getInverterVoltage() == inverter.getDCinput()){
                 actualInverter = inverter;
@@ -121,7 +149,7 @@ public class InverterSizing {
                  * This condition is excuted if and only if an inverter is not found with
                  * the system voltage dicided by the system or by the user.
                  * Hence an inverter with the highest voltage is selected for sizing the system
-                 */
+                 *
                 Inverter obj = inverter;
                 if(i == 0){
                     actualInverter = inverter;
@@ -131,7 +159,7 @@ public class InverterSizing {
                     actualInverter = obj;
                 }
             }
-        }
+        }*/
         return actualInverter;
     }
 
@@ -149,6 +177,6 @@ public class InverterSizing {
         "\n Inverter input DC Voltage= '" + getInverter().getDCinput() +
         "V',\n Inverter output rated power= '" + getInverter().getRatedWatt() + 
         "W',\n Inverter output rated voltage= '" + "220/240" +
-        "'}\n";
+        "'\n}";
     }
 }
