@@ -126,4 +126,11 @@ public class Store {
         batteries.add(new Battery(2, 3000));
         return batteries;
     }
+
+    public static ArrayList<ChargeController> getChargeControllers() {
+        ArrayList<ChargeController> chargeControllers = new ArrayList<>();
+
+
+        return chargeControllers;
+    }
 }
