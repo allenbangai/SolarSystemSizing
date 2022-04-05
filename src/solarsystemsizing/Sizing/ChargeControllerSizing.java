@@ -27,7 +27,7 @@ public class ChargeControllerSizing {
         this.systemDCVoltage = inverterSizing.getInverter().getDCinput();
         this.panelOCVoltage = panelSizing.getPanelConnection().getSeriesConnection() * panelSizing.getPanel().getNominalVoltage();
         this.panelTotalPower = panelSizing.getPanelNumber() * panelSizing.getPanel().getPower();
-        this.batteriesChargingCurrent = this.panelTotalPower / this.systemDCVoltage;
+        this.batteriesChargingCurrent = (int) (1.25 * (this.panelTotalPower / this.systemDCVoltage));
         this.chargeControllers = chargeControllers;
     }
     
@@ -74,7 +74,7 @@ public class ChargeControllerSizing {
         for (ChargeController chargeController : getChargeControllers()) {
             if(getSystemDCVoltage() == chargeController.getRatedChargeVoltage() && 
             getBatteriesChargingCurrent() <= chargeController.getRatedChargeCurrent() && 
-            getPanelOCVoltage() <= chargeController.getMaxInputVoltage() && getPanelTotalPower() < chargeController.getRatedChargePower() ){
+            getPanelOCVoltage() <= chargeController.getMaxInputVoltage()){
                 actualControllers.add(chargeController);
             }
         }
@@ -85,7 +85,7 @@ public class ChargeControllerSizing {
             int diff = 0;
             int init;
             for (ChargeController chargeController : getChargeControllers()) {
-                init = chargeController.getRatedChargePower() - getPanelTotalPower();
+                init = chargeController.getRatedChargeCurrent() - getBatteriesChargingCurrent();
                 if(i == 0){
                     diff = init;
                 }
