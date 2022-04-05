@@ -27,7 +27,7 @@ public class ChargeControllerSizing {
         this.systemDCVoltage = inverterSizing.getInverter().getDCinput();
         this.panelOCVoltage = panelSizing.getPanelConnection().getSeriesConnection() * panelSizing.getPanel().getNominalVoltage();
         this.panelTotalPower = panelSizing.getPanelNumber() * panelSizing.getPanel().getPower();
-        this.batteriesChargingCurrent = (int) (1.25 * (this.panelTotalPower / this.systemDCVoltage));
+        this.batteriesChargingCurrent = (int) (1.15 * (this.panelTotalPower / this.systemDCVoltage));
         this.chargeControllers = chargeControllers;
     }
     
@@ -80,7 +80,7 @@ public class ChargeControllerSizing {
         }
 
         //part 2: getting the actual charge controller
-        if (actualControllers.size() > 1) {
+        if (!actualControllers.isEmpty()) {
             int i = 0;
             int diff = 0;
             int init;
@@ -94,8 +94,6 @@ public class ChargeControllerSizing {
                     actualController = chargeController;
                 }
             }
-        } else {
-            actualController = actualControllers.get(0);
         }
         return actualController;
         //implementing code in ChargeController.java part 4: declaring and implementing getChargeControlloer() method part 1
