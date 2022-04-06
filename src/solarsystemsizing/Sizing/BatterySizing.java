@@ -33,9 +33,9 @@ public class BatterySizing {
      * This inverter gives use the inverter object that was used in sizing the system for reason which
      * can be found in our algorithm.
      */
-    public BatterySizing(ArrayList<Battery> batteries, double stmMaxEnergy2, Inverter stmInverter) {
+    public BatterySizing(ArrayList<Battery> batteries, double stmMaxEnergy, Inverter stmInverter) {
         this.batteries = batteries;
-        this.stmMaxEnergy = stmMaxEnergy2;
+        this.stmMaxEnergy = stmMaxEnergy;
         this.stmInverter = stmInverter;
     }
 
@@ -187,7 +187,7 @@ public class BatterySizing {
      * @return
      */
     public int getBatteryNum() {
-        int batteryNum = getBatteriesEnergy_AH()/getBatteryAmpereHour();
+        int batteryNum = (int) (getBatteriesEnergy_AH()/ (0.8 * getBatteryAmpereHour()));
         if(!helper.isEven(batteryNum)){
             batteryNum++;
         }
