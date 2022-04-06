@@ -27,7 +27,7 @@ public class ChargeControllerSizing {
         this.systemDCVoltage = inverterSizing.getInverter().getDCinput();
         this.panelOCVoltage = panelSizing.getPanelConnection().getSeriesConnection() * panelSizing.getPanel().getNominalVoltage();
         this.panelTotalPower = panelSizing.getPanelNumber() * panelSizing.getPanel().getPower();
-        this.batteriesChargingCurrent = (int) (1.15 * (this.panelTotalPower / this.systemDCVoltage));
+        this.batteriesChargingCurrent = (int) (1.1 * (this.panelTotalPower / this.systemDCVoltage));
         this.chargeControllers = chargeControllers;
     }
     
@@ -101,7 +101,7 @@ public class ChargeControllerSizing {
 
     @Override
     public String toString() {
-        return "\nThe Charge Controller Sizing is as folows {" +
+        return "\nThe Charge Controller Sizing is as follows {" +
             "\n The charge controller battery voltage= '" + getChargeController().getRatedChargeVoltage() + 
             "V',\n The charge controller maximum panel voltage= '" + getChargeController().getMaxInputVoltage() + 
             "V',\n The charge controller maximum panel power= '" + getChargeController().getRatedChargePower() + 
@@ -110,7 +110,7 @@ public class ChargeControllerSizing {
     }
 
     public String toStringResult() {
-        return "\nThe Charge Controller parameters calculated are as folows {" +
+        return "\nThe Charge Controller parameters calculated are as follows {" +
             "\n The system DC voltage= '" + getSystemDCVoltage() + 
             "V',\n The panel open circuit voltage= '" + getPanelOCVoltage() + 
             "V',\n The panel total power= '" + getPanelTotalPower() + 
