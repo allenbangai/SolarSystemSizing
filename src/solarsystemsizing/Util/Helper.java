@@ -41,8 +41,7 @@ public class Helper {
             return true;
         }else if (value%2 == 0) {
             return true;
-        }
-        else{
+        }else{
             return false;
         }
     }

@@ -59,14 +59,6 @@ public class PanelSizing {
     }
 
     /**
-     * Setter for initiating private variable energy
-     * @param energy 
-     */
-    public void setEnergy(float energy) {
-        this.energy = energy;
-    }
-
-    /**
      * Setter for initiating private variable irradiance
      * @param irradiance 
      */
@@ -129,7 +121,7 @@ public class PanelSizing {
         float val;
         for(Panel panel : panels){
             val = (float)panel.getPower();
-            panelNumber = (int) Math.round(energy/(val*irradiance));
+            panelNumber = (int) Math.round(getEnergy()/(val*getIrradiance()));
             if (!helper.isvalid(panelNumber)) {
                 panelNumber++;
             }
