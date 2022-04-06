@@ -166,7 +166,7 @@ public class BatterySizing {
      * @return
      */
     private int findBatteryVoltage(){
-        if(getStmMaxPower() > 0 && getStmMaxPower() <= 10000 && batteryVoltage == 0){
+        if(getStmMaxPower() > 0 && getStmMaxPower() <= 8000 && batteryVoltage == 0){
             batteryVoltage = 12;
         }else if (getStmMaxPower() > 10000 && batteryVoltage == 0) {
             batteryVoltage = 2;
