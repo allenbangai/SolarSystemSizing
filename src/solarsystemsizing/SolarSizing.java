@@ -27,6 +27,7 @@ public class SolarSizing {
         PanelSizing panelSizing = new PanelSizing();
         InverterSizing inverterSizing =  new InverterSizing();
         BatterySizing batterySizing = new BatterySizing();
+        ChargeControllerSizing chargeControllerSizing = new ChargeControllerSizing();
 
         //variables here
         double stmMaxEnergy = 0;
@@ -45,6 +46,7 @@ public class SolarSizing {
                 panelSizing = new PanelSizing(stmMaxEnergy, 4.3, Store.getPanels());
                 inverterSizing = new InverterSizing(Store.getInverters(), (int) stmMaxPower);
                 batterySizing = new BatterySizing(Store.getBatteries(), stmMaxEnergy, inverterSizing.getInverter());
+                chargeControllerSizing = new ChargeControllerSizing(inverterSizing, panelSizing, Store.getChargeControllers());
                 break;
             case 2:
                 System.out.println("Here, you will have the sizing of your system"
@@ -58,6 +60,7 @@ public class SolarSizing {
                 inverterSizing.setInverterVoltage(24);
                 batterySizing = new BatterySizing(Store.getBatteries(), stmMaxEnergy, inverterSizing.getInverter());
                 batterySizing.setBatteryVoltage(12);
+                chargeControllerSizing = new ChargeControllerSizing(inverterSizing, panelSizing, Store.getChargeControllers());
                 break;
             case 3:
                 System.out.println("Here, you will have the sizing of your system from the total individual"
@@ -74,5 +77,6 @@ public class SolarSizing {
         System.out.println(panelSizing.toString());
         System.out.println(inverterSizing.toString());
         System.out.println(batterySizing.toString());
+        System.out.println(chargeControllerSizing.toStringResult());
     }
 }
