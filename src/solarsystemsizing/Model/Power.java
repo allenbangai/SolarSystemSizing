@@ -25,6 +25,18 @@ public class Power {
     }
 
     /**
+     * 
+     * @param numOfLoad
+     * @param powerOfLoad
+     * @param nameOfLoad
+     */
+    public Power(int numOfLoad, int powerOfLoad, String nameOfLoad) {
+        this.numOfLoad = numOfLoad;
+        this.powerOfLoad = powerOfLoad;
+        this.nameOfLoad = nameOfLoad;
+    }
+
+    /**
      * @return 
      * Return the available number of load.
      */
