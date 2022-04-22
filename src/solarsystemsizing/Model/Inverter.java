@@ -1,4 +1,4 @@
-package solarsystemsizing.Model;
+ package solarsystemsizing.Model;
 
 /**
  *
