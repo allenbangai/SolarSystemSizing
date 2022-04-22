@@ -11,6 +11,7 @@ package solarsystemsizing.Model;
 public class Power {
     private int numOfLoad;
     private int powerOfLoad;
+    private String nameOfLoad;
 
     /***
      * Instantiates parameters for a load so the total number of load can be return from object
@@ -63,4 +64,19 @@ public class Power {
     public int getPower(){
         return (numOfLoad * powerOfLoad);
     }
+
+    /**
+     * @return String return the nameOfLoad
+     */
+    public String getNameOfLoad() {
+        return nameOfLoad;
+    }
+
+    /**
+     * @param nameOfLoad the nameOfLoad to set
+     */
+    public void setNameOfLoad(String nameOfLoad) {
+        this.nameOfLoad = nameOfLoad;
+    }
+
 }
