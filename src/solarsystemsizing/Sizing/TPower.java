@@ -32,10 +32,6 @@ public class TPower extends Total{
         return tPower;
     }
 
-    public void settPower(int tPower) {
-        this.tPower = tPower;
-    }
-
     /**
      * return a total same number of hours of autonomy for all loads in the local
      * meaning all the loads will have the same number of autonomy
@@ -45,21 +41,13 @@ public class TPower extends Total{
         return hours;
     }
 
-    public void setHours(int hours) {
-        this.hours = hours;
-    }
-
-    public void setPowers(ArrayList<Power> tPowers) {
-        this.powers = tPowers;
-    }
-
     public ArrayList<Power> getPowers() {
         return powers;
     }
 
     private int val1 = 0;
     private void toHelp(){
-        for(Power power : powers){
+        for(Power power : getPowers()){
             val1 = val1 + power.getPower();
         }
     }

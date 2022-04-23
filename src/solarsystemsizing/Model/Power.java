@@ -83,12 +83,4 @@ public class Power {
     public String getNameOfLoad() {
         return nameOfLoad;
     }
-
-    /**
-     * @param nameOfLoad the nameOfLoad to set
-     */
-    public void setNameOfLoad(String nameOfLoad) {
-        this.nameOfLoad = nameOfLoad;
-    }
-
 }
