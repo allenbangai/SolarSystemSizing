@@ -53,11 +53,11 @@ public class InverterSizing {
      * @return
      */
     private int getInverterVoltage(){
-        if(systemMaxPower > 0 && systemMaxPower <= 1000 && inverterVoltage == 0){
+        if(getSystemMaxPower() > 0 && getSystemMaxPower() <= 1000 && inverterVoltage == 0){
             inverterVoltage = inverterVoltage1;
-        }else if (systemMaxPower > 1000 && systemMaxPower <= 5000 && inverterVoltage == 0){
+        }else if (getSystemMaxPower() > 1000 && getSystemMaxPower() <= 5000 && inverterVoltage == 0){
             inverterVoltage = inverterVoltage2;
-        }else if(systemMaxPower > 5000 && inverterVoltage == 0){
+        }else if(getSystemMaxPower() > 5000 && inverterVoltage == 0){
             inverterVoltage = inverterVoltage3;
         }
         return inverterVoltage;
@@ -84,7 +84,7 @@ public class InverterSizing {
             }
 
             for (Inverter inverter : inverters) {
-                if(getInverterVoltage() == inverter.getDCinput() && getSystemMaxPower() <= inverter.getRatedWatt()){
+                if(getInverterVoltage() == inverter.getDCinput() && getSystemMaxPower() < inverter.getRatedWatt()){
                     inverList.add(inverter);
                 }
             }
@@ -102,7 +102,7 @@ public class InverterSizing {
                     diff = init;
                 }
                 i++;
-                if(diff >= init){
+                if(init <= diff){
                     actualInverter = inverter;
                 }
             }
