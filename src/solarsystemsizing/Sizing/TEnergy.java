@@ -79,7 +79,7 @@ public class TEnergy extends Total{
             return (double) (getVal() * (gettEnergy()/getHours()));
         }else{
             toHelp();
-            return (double) (getVal() * val2);
+            return (double) (val2);
         }
     }
 }

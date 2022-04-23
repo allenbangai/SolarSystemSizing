@@ -35,7 +35,7 @@ public class TPower extends Total{
     /**
      * return a total same number of hours of autonomy for all loads in the local
      * meaning all the loads will have the same number of autonomy
-     * @return 
+     * @return
      */
     public int getHours() {
         return hours;
@@ -53,8 +53,7 @@ public class TPower extends Total{
     }
     
     private int returnTEnergy(){
-        ArrayList<Power> powers = getPowers();
-        if (powers.isEmpty()) {
+        if (getPowers().isEmpty()) {
             return gettPower() * getHours();
         } else {
             toHelp();
@@ -73,7 +72,7 @@ public class TPower extends Total{
             return (double) (getVal() * gettPower());
         }else{
             toHelp();
-            return (double) (getVal() * val1);
+            return (double) (val1);
         }
     }
 }
