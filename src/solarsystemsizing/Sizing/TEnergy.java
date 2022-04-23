@@ -58,25 +58,21 @@ public class TEnergy extends Total{
         }
 
     }
-    
-    private int returnTotalEnergy(){
-        if (getEnergys().isEmpty()) {
-            return gettEnergy();
-        }else {
-            toHelp();
-            return val1;
-        }
-    }
 
     @Override
     public double totalE() {
-        return (double) (getVal() * returnTotalEnergy());
+        if (getEnergys().isEmpty()) {
+            return getVal() * gettEnergy();
+        }else {
+            toHelp();
+            return (double) (getVal() * val1);
+        }
     }
     
     @Override
     public double totalP(){
         if(getEnergys().isEmpty()){
-            return (double) (getVal() * (gettEnergy()/getHours()));
+            return (double) (gettEnergy()/getHours());
         }else{
             toHelp();
             return (double) (val2);
