@@ -25,6 +25,19 @@ public class Energy extends Power{
     }
 
     /**
+     * Instantiate parameters for a load from class Tpower.
+     * Instantiate parameters for total hours of use of load per day in Hours (H).
+     * S.I.U of hours is H.
+     * @param numOfHours
+     * @param numOfLoad
+     * @param powerOfLoad 
+     */
+    public Energy(int numOfHours, int numOfLoad, int powerOfLoad, String nameOfLoad) {
+        super(numOfLoad, powerOfLoad, nameOfLoad);
+        this.numOfHours = numOfHours;
+    }
+
+    /**
      * @return 
      * Return the total number of hours the load is used per day
      */
