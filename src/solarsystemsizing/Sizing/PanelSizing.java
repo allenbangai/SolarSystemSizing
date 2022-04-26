@@ -29,6 +29,7 @@ public class PanelSizing {
     private ArrayList<Panel> panels = new ArrayList<>();
     private int panelNumber;
     private int position;
+    private Panel panel = new Panel(0, 0, 0);
 
     /**
      * Constructor Solar panel
@@ -51,7 +52,7 @@ public class PanelSizing {
         this.irradiance = irradiance;
         this.panels = panels;
         //initializing method to find panelNumber and panel power position
-        this.findPanelNumber();
+        //this.findPanelNumber();
     }
     
 
@@ -64,6 +65,10 @@ public class PanelSizing {
      */
     public void setIrradiance(float irradiance) {
         this.irradiance = irradiance;
+    }
+
+    public void setPanel(Panel panel){
+        this.panel = panel;
     }
 
     /** 
@@ -112,12 +117,25 @@ public class PanelSizing {
     public Panel getPanel(){
         return panels.get(position);
     }
+
+    private Panel search(){
+        if (panel.getPower() != 0) {
+            float val;
+            for (Panel panel : panels) {
+                
+            }
+            
+        } else {
+            return panel;
+        }
+        return panel;
+    }
     
     /**
      * Private method to get the smallest number of panels needed for sizing the system.
      * This method also helps to determine to determine the type of panel object needed for sizing the object
      */
-    private void findPanelNumber(){        
+    /*private void findPanelNumber(){        
         float val;
         for(Panel panel : panels){
             val = (float)panel.getPower();
@@ -137,7 +155,7 @@ public class PanelSizing {
                 position = i;
             }
         }
-    }
+    } */
 
     /**
      * @return
