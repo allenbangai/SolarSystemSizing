@@ -221,6 +221,10 @@ public class PanelSizing {
         "'\n}";
     }
 
+    private class PanelsChoice{
+        
+    }
+
     /**
     * 
     * Class solar panel
