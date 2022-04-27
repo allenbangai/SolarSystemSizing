@@ -221,10 +221,24 @@ public class PanelSizing {
         "'\n}";
     }
 
+    /**
+    * 
+    * Class Panel Choice
+    * @since year 2022
+    * 
+    * @version 1.0
+    * 
+    * @author Kamadje Allen
+     */
     private class PanelChoice{
         private int panelNumber;
         private int panelPower;
-        
+
+        /**
+         * 
+         * @param panelNumber
+         * @param panelPower
+         */
         public PanelChoice(int panelNumber, int panelPower){
             this.panelNumber = panelNumber;
             this.panelPower = panelPower;
