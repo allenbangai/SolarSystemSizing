@@ -25,7 +25,7 @@ public class PanelSizing {
      * This variable comprises all the available solar panels 
      * and their respective power
      */
-    private ArrayList<Integer> panelList = new ArrayList<>();
+    private ArrayList<PanelChoice> panelChoiceList = new ArrayList<>();
     private ArrayList<Panel> panels = new ArrayList<>();
     private int panelNumber;
     private int position;
@@ -97,16 +97,6 @@ public class PanelSizing {
         return panelNumber;
     }
 
-    /** 
-     * Method {@link #getPanelPower()}
-     * @return
-     * This method returns the selected panel power for sizing the system
-     * Returned value is of type Integer
-     */
-    public int getPanelPower() {
-        return getPanel().getPower();
-    }
-
     /**
      * Method {@link #getPanel()}
      * @return
@@ -118,17 +108,22 @@ public class PanelSizing {
         return panels.get(position);
     }
 
-    private Panel search(){
-        if (panel.getPower() != 0) {
-            float val;
+    private void search(){
+        if (panel.getPower() != 0 || getPanel().getVoltage() == 0 || getPanel().getNominalVoltage() == 0) {
+            int val1;
+            int val2;
             for (Panel panel : panels) {
-                
+                val1 = panel.getPower();
+                val2 = (int) Math.round(getEnergy()/(val1*getIrradiance()));
+                if(!helper.isvalid(val2)){
+                    val2++;
+                }
+                panelChoiceList.add(new PanelChoice(val2, val1));
             }
             
         } else {
-            return panel;
+            
         }
-        return panel;
     }
     
     /**
@@ -211,7 +206,7 @@ public class PanelSizing {
     @Override
     public String toString() {
         return "\nThe Panels Sizing is as folows: {" +
-        "\n Panel Power= '" + getPanelPower() +
+        "\n Panel Power= '" + getPanel().getPower() +
         "W',\n Panel Voltage= '" + getPanel().getVoltage() + 
         "V',\n Panel Nominal Voltage= '" + getPanel().getNominalVoltage() +
         "V',\n Number of Panels= '" + getPanelNumber() +
