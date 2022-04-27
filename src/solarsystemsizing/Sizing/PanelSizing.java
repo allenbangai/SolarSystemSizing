@@ -105,13 +105,14 @@ public class PanelSizing {
      * panelNominalVoltage.
      */
     public Panel getPanel(){
-        return panels.get(position);
+        return this.panel;
     }
 
     private void search(){
         if (panel.getPower() != 0 || getPanel().getVoltage() == 0 || getPanel().getNominalVoltage() == 0) {
             int val1;
             int val2;
+            //collecting list of possible panel choice
             for (Panel panel : panels) {
                 val1 = panel.getPower();
                 val2 = (int) Math.round(getEnergy()/(val1*getIrradiance()));
@@ -121,9 +122,14 @@ public class PanelSizing {
                 panelChoiceList.add(new PanelChoice(val2, val1));
             }
             
-        } else {
-            
-        }
+            //finding best economical panel choice for the system
+            int totalPanelsPower = panelChoiceList.get(0).getTotalPanelsPower();
+            for (PanelChoice panelChoice : panelChoiceList) {
+                if(totalPanelsPower >= panelChoice.getTotalPanelsPower()){
+                    this.panel = 
+                }
+            }
+        } 
     }
     
     /**
@@ -227,28 +233,28 @@ public class PanelSizing {
      */
     private class PanelChoice{
         private int panelNumber;
-        private int panelPower;
+        private Panel panel;
 
         /**
          * 
          * @param panelNumber
-         * @param panelPower
+         * @param panel
          */
-        public PanelChoice(int panelNumber, int panelPower){
+        public PanelChoice(int panelNumber, Panel panel){
             this.panelNumber = panelNumber;
-            this.panelPower = panelPower;
+            this.panel = panel;
         }
 
         public int getPanelNumber(){
             return this.panelNumber;
         }
 
-        public int getPanelPower(){
-            return this.panelPower;
+        public Panel getPanel(){
+            return this.panel;
         }
 
         public int getTotalPanelsPower(){
-            return getPanelNumber() * getPanelPower();
+            return getPanelNumber() * getPanel().getPower();
         }        
     }
 
