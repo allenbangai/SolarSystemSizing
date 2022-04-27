@@ -221,8 +221,26 @@ public class PanelSizing {
         "'\n}";
     }
 
-    private class PanelsChoice{
+    private class PanelChoice{
+        private int panelNumber;
+        private int panelPower;
         
+        public PanelChoice(int panelNumber, int panelPower){
+            this.panelNumber = panelNumber;
+            this.panelPower = panelPower;
+        }
+
+        public int getPanelNumber(){
+            return this.panelNumber;
+        }
+
+        public int getPanelPower(){
+            return this.panelPower;
+        }
+
+        public int getTotalPanelsPower(){
+            return getPanelNumber() * getPanelPower();
+        }        
     }
 
     /**
