@@ -55,7 +55,8 @@ public class SolarSizing {
                 stmMaxEnergy = total.totalE();
                 stmMaxPower = total.totalP();
                 Panel panel = new Panel(300, 24, 36);
-                panelSizing = new PanelSizingPro(stmMaxEnergy, (float) 4.3, panel);
+                panelSizing = new PanelSizing(stmMaxEnergy, 4.3, Store.getPanels());
+                panelSizing.setPanel(panel);
                 inverterSizing = new InverterSizing(Store.getInverters(), (int) stmMaxPower);
                 inverterSizing.setInverterVoltage(24);
                 batterySizing = new BatterySizing(Store.getBatteries(), stmMaxEnergy, inverterSizing.getInverter());
