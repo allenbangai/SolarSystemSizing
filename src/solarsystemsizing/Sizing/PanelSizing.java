@@ -130,31 +130,6 @@ public class PanelSizing {
         }
         return number;
     }
-    
-    /**
-     * 
-     */
-    /*private void findPanelNumber(){        
-        float val;
-        for(Panel panel : panels){
-            val = (float)panel.getPower();
-            panelNumber = (int) Math.round(getEnergy()/(val*getIrradiance()));
-            if (!helper.isvalid(panelNumber)) {
-                panelNumber++;
-            }
-            panelList.add(panelNumber);         
-        }
-        panelNumber = panelList.get(0);
-        //this for loop is to get the smallest number of panels needed possible as well as the position of the
-        //panel power in the panel list
-        for (int i = 0; i < panelList.size(); i++) {
-            int num = panelList.get(i);
-            if (panelNumber >= num) {
-                panelNumber = num;
-                position = i;
-            }
-        }
-    } */
 
     /**
      * @return
