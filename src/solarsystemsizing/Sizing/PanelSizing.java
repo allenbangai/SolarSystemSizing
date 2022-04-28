@@ -102,28 +102,33 @@ public class PanelSizing {
      * This method also helps to determine to determine the type of panel object needed for sizing the object
      */
     private void search(){
-        if (panel.getPower() != 0 || getPanel().getVoltage() == 0 || getPanel().getNominalVoltage() == 0) {
+        if (panel.getPower() != 0 || getPanel().getVoltage() != 0 || getPanel().getNominalVoltage() != 0) {
             float val1;
             int number;
             //collecting list of possible panel choice
             for (Panel panel : panels) {
-                val1 = (float) panel.getPower();
-                number = (int) Math.round(getEnergy()/(val1*getIrradiance()));
-                if(!helper.isvalid(number)){
-                    number++;
-                }
-                panelChoiceList.add(new PanelChoice(number, panel));
+                panelChoiceList.add(new PanelChoice(getNumber(getPanel().getPower()), panel));
             }
             
             //finding best economical panel choice for the system
             int totalPanelsPower = panelChoiceList.get(0).getTotalPanelsPower();
             for (PanelChoice panelChoice : panelChoiceList) {
-                if(totalPanelsPower >= panelChoice.getTotalPanelsPower()){
+                if(totalPanelsPower <= panelChoice.getTotalPanelsPower()){
                     this.panel = panelChoice.getPanel();
                     this.panelNumber = panelChoice.getPanelNumber();
                 }
             }
-        } 
+        }else{
+            this.panelNumber = getNumber(getPanel().getPower());
+        }
+    }
+
+    private int getNumber(int power){
+        int number = (int) Math.round(getEnergy()/(power*getIrradiance()));
+        if(!helper.isvalid(number)){
+            number++;
+        }
+        return number;
     }
     
     /**
