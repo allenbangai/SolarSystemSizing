@@ -27,6 +27,7 @@ public class Store {
         panels.add(new Panel(150, 12, 18));
         panels.add(new Panel(200, 24, 36));
         panels.add(new Panel(220, 24, 36));
+        panels.add(new Panel(250, 24, 36));
         panels.add(new Panel(275, 24, 36));
         panels.add(new Panel(300, 24, 36));
         panels.add(new Panel(350, 24, 36));

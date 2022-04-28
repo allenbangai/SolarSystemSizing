@@ -110,23 +110,24 @@ public class PanelSizing {
 
     private void search(){
         if (panel.getPower() != 0 || getPanel().getVoltage() == 0 || getPanel().getNominalVoltage() == 0) {
-            int val1;
-            int val2;
+            float val1;
+            int number;
             //collecting list of possible panel choice
             for (Panel panel : panels) {
-                val1 = panel.getPower();
-                val2 = (int) Math.round(getEnergy()/(val1*getIrradiance()));
-                if(!helper.isvalid(val2)){
-                    val2++;
+                val1 = (float) panel.getPower();
+                number = (int) Math.round(getEnergy()/(val1*getIrradiance()));
+                if(!helper.isvalid(number)){
+                    number++;
                 }
-                panelChoiceList.add(new PanelChoice(val2, val1));
+                panelChoiceList.add(new PanelChoice(number, panel));
             }
             
             //finding best economical panel choice for the system
             int totalPanelsPower = panelChoiceList.get(0).getTotalPanelsPower();
             for (PanelChoice panelChoice : panelChoiceList) {
                 if(totalPanelsPower >= panelChoice.getTotalPanelsPower()){
-                    this.panel = 
+                    this.panel = panelChoice.getPanel();
+                    this.panelNumber = panelChoice.getPanelNumber();
                 }
             }
         } 

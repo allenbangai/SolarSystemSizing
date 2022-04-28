@@ -38,9 +38,9 @@ public class SolarSizing {
 
         switch(sizingType){
             case 1:
-                System.out.println("Here, you will have the sizing "
+                System.out.println("Here, you  have the sizing "
                         + "of your system from the total energy of the system inputed with the number of hours of autonomy");
-                total = new TEnergy(4000, 5);
+                total = new TEnergy(5000, 5);
                 stmMaxEnergy = total.totalE();
                 stmMaxPower = total.totalP();
                 panelSizing = new PanelSizing(stmMaxEnergy, 4.3, Store.getPanels());
