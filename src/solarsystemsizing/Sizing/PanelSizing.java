@@ -21,25 +21,14 @@ public class PanelSizing {
     private Helper helper = new Helper();
     private double energy;
     private double irradiance;
+    private ArrayList<Panel> panels = new ArrayList<>();
     /**
      * This variable comprises all the available solar panels 
      * and their respective power
      */
     private ArrayList<PanelChoice> panelChoiceList = new ArrayList<>();
-    private ArrayList<Panel> panels = new ArrayList<>();
     private int panelNumber;
-    private int position;
     private Panel panel = new Panel(0, 0, 0);
-
-    /**
-     * Constructor Solar panel
-     * @param energy
-     * @param irradiance 
-     */
-    public PanelSizing(double energy, double irradiance) {
-        this.energy = energy;
-        this.irradiance = irradiance;
-    }    
 
     /**
      * 
@@ -108,6 +97,10 @@ public class PanelSizing {
         return this.panel;
     }
 
+    /**
+     * Private method to get the smallest number of panels needed for sizing the system.
+     * This method also helps to determine to determine the type of panel object needed for sizing the object
+     */
     private void search(){
         if (panel.getPower() != 0 || getPanel().getVoltage() == 0 || getPanel().getNominalVoltage() == 0) {
             float val1;
@@ -134,8 +127,7 @@ public class PanelSizing {
     }
     
     /**
-     * Private method to get the smallest number of panels needed for sizing the system.
-     * This method also helps to determine to determine the type of panel object needed for sizing the object
+     * 
      */
     /*private void findPanelNumber(){        
         float val;
@@ -210,6 +202,9 @@ public class PanelSizing {
         return panelConnection;
     }
 
+    /**
+     * prints all neccesary data from sizing solar panel
+     */
     @Override
     public String toString() {
         return "\nThe Panels Sizing is as folows: {" +
