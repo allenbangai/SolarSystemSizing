@@ -52,7 +52,7 @@ public class PanelSizing {
         this.irradiance = irradiance;
         this.panels = panels;
         //initializing method to find panelNumber and panel power position
-        //this.findPanelNumber();
+        this.search();
     }
     
 
