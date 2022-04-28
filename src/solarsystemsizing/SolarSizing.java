@@ -51,7 +51,7 @@ public class SolarSizing {
             case 2:
                 System.out.println("Here, you will have the sizing of your system"
                         + " from the total power of the system and the total time of autonomy of all as a hole device inputed");
-                total = new TPower(2000, 5);
+                total = new TPower(1000, 5);
                 stmMaxEnergy = total.totalE();
                 stmMaxPower = total.totalP();
                 Panel panel = new Panel(300, 24, 36);

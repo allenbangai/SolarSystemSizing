@@ -65,7 +65,7 @@ public class PanelSizing {
      * Method returns the system energy
      */
     public double getEnergy() {
-        return energy;
+        return this.energy;
     }
 
     /**
@@ -83,7 +83,8 @@ public class PanelSizing {
      * Return value is of type int
      */
     public int getPanelNumber() {
-        return panelNumber;
+        this.search();
+        return this.panelNumber;
     }
 
     /**
@@ -102,24 +103,23 @@ public class PanelSizing {
      * This method also helps to determine to determine the type of panel object needed for sizing the object
      */
     private void search(){
-        if (panel.getPower() != 0 || getPanel().getVoltage() != 0 || getPanel().getNominalVoltage() != 0) {
-            float val1;
-            int number;
+        if (getPanel().getPower() != 0 && getPanel().getVoltage() != 0 && getPanel().getNominalVoltage() != 0) {
+            this.panelNumber = getNumber(getPanel().getPower());
+        }
+        else{
             //collecting list of possible panel choice
             for (Panel panel : panels) {
-                panelChoiceList.add(new PanelChoice(getNumber(getPanel().getPower()), panel));
+                panelChoiceList.add(new PanelChoice(getNumber(panel.getPower()), panel));
             }
             
             //finding best economical panel choice for the system
             int totalPanelsPower = panelChoiceList.get(0).getTotalPanelsPower();
             for (PanelChoice panelChoice : panelChoiceList) {
-                if(totalPanelsPower <= panelChoice.getTotalPanelsPower()){
+                if(totalPanelsPower >= panelChoice.getTotalPanelsPower()){
                     this.panel = panelChoice.getPanel();
                     this.panelNumber = panelChoice.getPanelNumber();
                 }
             }
-        }else{
-            this.panelNumber = getNumber(getPanel().getPower());
         }
     }
 

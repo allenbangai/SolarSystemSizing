@@ -69,7 +69,7 @@ public class TPower extends Total{
     @Override
     public double totalP() {
         if(getPowers().isEmpty()){
-            return (double) (getVal() * gettPower());
+            return (double) gettPower();
         }else{
             toHelp();
             return (double) (val1);
