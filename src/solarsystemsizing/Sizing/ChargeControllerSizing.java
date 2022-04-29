@@ -123,7 +123,8 @@ public class ChargeControllerSizing {
         return "\nThe Charge Controller parameters calculated are as follows {" +
             "\n The system DC voltage= '" + getSystemDCVoltage() + 
             "V',\n The panel open circuit voltage= '" + getPanelOCVoltage() + 
-            "V',\n The panel total power= '" + getPanelTotalPower() + 
+            "V',\n The panel short circuit current= '" + getPanelSCCurrent() + 
+            "C',\n The panel total power= '" + getPanelTotalPower() + 
             "W',\n The batteries charging current= '" + getBatteriesChargingCurrent() + 
             "A'\n}";
     }
