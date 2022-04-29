@@ -29,7 +29,7 @@ public class ChargeControllerSizing {
         this.panelOCVoltage = panelSizing.getPanelConnection().getSeriesConnection() * panelSizing.getPanel().getNominalVoltage();
         this.panelSCCurrent = panelSizing.getPanelConnection().getParallelConnection() * panelSizing.getPanel().getNominalCurent();
         this.panelTotalPower = panelSizing.getPanelNumber() * panelSizing.getPanel().getPower();
-        this.batteriesChargingCurrent = (int) (1.1 * (this.panelTotalPower / this.systemDCVoltage));
+        this.batteriesChargingCurrent = (int) (0.85 * (this.panelTotalPower / this.systemDCVoltage));
         this.chargeControllers = chargeControllers;
     }
     
@@ -124,7 +124,7 @@ public class ChargeControllerSizing {
             "\n The system DC voltage= '" + getSystemDCVoltage() + 
             "V',\n The panel open circuit voltage= '" + getPanelOCVoltage() + 
             "V',\n The panel short circuit current= '" + getPanelSCCurrent() + 
-            "C',\n The panel total power= '" + getPanelTotalPower() + 
+            "A',\n The panel total power= '" + getPanelTotalPower() + 
             "W',\n The batteries charging current= '" + getBatteriesChargingCurrent() + 
             "A'\n}";
     }

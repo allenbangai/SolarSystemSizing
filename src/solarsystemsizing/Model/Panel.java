@@ -31,5 +31,9 @@ public class Panel {
         return nominalVoltage;
     }
 
+    public int getNominalCurent(){
+        return getPower() / getNominalVoltage();
+    }
+
     //TODO 4: Document code in this class Panel.java
 }
