@@ -52,9 +52,18 @@ public class CableSizing {
      * 
      * @return
      */
-    public float batteryCrossArea(){
+    public float getBatteryCrossArea(){
         return (getCable().getResistivity() * controllerSizing.getBatteriesChargingCurrent() * getBatteryCableLength()) 
             / controllerSizing.getSystemDCVoltage();
+    }
+
+    /**
+     * 
+     * @return
+     */
+    public float getPanelCrossArea(){
+        return (getCable().getResistivity() * controllerSizing.getPanelSCCurrent() * getPanelCableleLength()) 
+            / controllerSizing.getPanelOCVoltage();
     }
 
     /** 
