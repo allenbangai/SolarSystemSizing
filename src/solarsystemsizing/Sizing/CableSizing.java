@@ -36,5 +36,15 @@ public class CableSizing {
     public ChargeControllerSizing getControllerSizing() {
         return controllerSizing;
     }
+
+    /** 
+     * (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */    
+    @Override
+    public String toString() {
+        return "CableSizing [batteryCableLength=" + batteryCableLength + ", controllerSizing=" + controllerSizing
+                + ", panelCableleLength=" + panelCableleLength + "]";
+    }
     
 }
