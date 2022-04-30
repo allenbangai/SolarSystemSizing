@@ -3,8 +3,8 @@ package solarsystemsizing.Sizing;
 import solarsystemsizing.Model.Cable;
 
 public class CableSizing {
-    private int batteryCableLength;
-    private int panelCableleLength;
+    private float batteryCableLength;
+    private float panelCableleLength;
     private ChargeControllerSizing controllerSizing;
     private Cable cable;
 
@@ -13,7 +13,7 @@ public class CableSizing {
      * @param panelCableleLength
      * @param controllerSizing
      */
-    public CableSizing(int batteryCableLength, int panelCableleLength, ChargeControllerSizing controllerSizing, Cable cable) {
+    public CableSizing(float batteryCableLength, float panelCableleLength, ChargeControllerSizing controllerSizing, Cable cable) {
         this.batteryCableLength = batteryCableLength;
         this.panelCableleLength = panelCableleLength;
         this.controllerSizing = controllerSizing;
@@ -23,14 +23,14 @@ public class CableSizing {
     /**
      * @return the batteryCableLength
      */
-    public int getBatteryCableLength() {
+    public float getBatteryCableLength() {
         return batteryCableLength;
     }
     
     /**
      * @return the panelCableleLength
      */
-    public int getPanelCableleLength() {
+    public float getPanelCableleLength() {
         return panelCableleLength;
     }
     
@@ -47,7 +47,16 @@ public class CableSizing {
     public Cable getCable(){
         return cable;
     }
-    
+
+    /**
+     * 
+     * @return
+     */
+    public float batteryCrossArea(){
+        return (getCable().getResistivity() * controllerSizing.getBatteriesChargingCurrent() * getBatteryCableLength()) 
+            / controllerSizing.getSystemDCVoltage();
+    }
+
     /** 
      * (non-Javadoc)
      * @see java.lang.Object#toString()
