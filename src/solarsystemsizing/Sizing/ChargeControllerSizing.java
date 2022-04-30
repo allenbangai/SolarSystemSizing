@@ -128,6 +128,4 @@ public class ChargeControllerSizing {
             "W',\n The batteries charging current= '" + getBatteriesChargingCurrent() + 
             "A'\n}";
     }
-
-
 }
