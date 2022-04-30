@@ -4,6 +4,11 @@ public class Cable {
     private String cableClass;
     private float resistivity;
 
+    public Cable(String cableClass, float resistivity) {
+        this.cableClass = cableClass;
+        this.resistivity = resistivity;
+    }
+
     /**
      * @return String return the cableClass
      */
