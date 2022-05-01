@@ -98,5 +98,5 @@ public class CableSizing {
             "m',\n The diameter of panel cable= '" + getPanelCableDiameter() + 
             "mm',\n The cross sectional area of panel cables= '" + getPanelCrossArea() + 
             "mm2'\n}";
-    
+    }
 }
