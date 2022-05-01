@@ -66,8 +66,21 @@ public class CableSizing {
             / controllerSizing.getPanelOCVoltage();
     }
 
+    /**
+     * 
+     * @return
+     */
     public double getBatteryCableDiameter(){
         double val = ((4 * getBatteryCrossArea()) / 3.1416);
+        return Math.pow(val, 0.5);
+    }
+
+    /**
+     * 
+     * @return
+     */
+    public double getPanelCableDiameter(){
+        double val = ((4 * getPanelCrossArea()) / 3.1416);
         return Math.pow(val, 0.5);
     }
 
