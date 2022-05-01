@@ -90,8 +90,13 @@ public class CableSizing {
      */    
     @Override
     public String toString() {
-        return "CableSizing [batteryCableLength=" + batteryCableLength + ", controllerSizing=" + controllerSizing
-                + ", panelCableleLength=" + panelCableleLength + "]";
-    }
+        return "\nThe Cable Sizing parameters are calculated as follows {" +
+            "\n The length of battery cable from ChargeController to Batteries and From Batteries to Inverter= '" + getBatteryCableLength() + 
+            "m',\n The diameter of battery cable= '" + getBatteryCableDiameter() + 
+            "mm',\n The cross sectional area of battery cable= '" + getBatteryCrossArea() + 
+            "mm2',\n The length of panels from panel array to chargeController= '" + getPanelCableleLength() + 
+            "m',\n The diameter of panel cable= '" + getPanelCableDiameter() + 
+            "mm',\n The cross sectional area of panel cables= '" + getPanelCrossArea() + 
+            "mm2'\n}";
     
 }
