@@ -130,8 +130,43 @@ public class Store {
 
     public static ArrayList<ChargeController> getChargeControllers() {
         ArrayList<ChargeController> chargeControllers = new ArrayList<>();
-
-
+        chargeControllers.add(new ChargeController(12, 20, 150, 280));
+        chargeControllers.add(new ChargeController(24, 20, 150, 550));
+        chargeControllers.add(new ChargeController(48, 20, 150, 1100));
+        chargeControllers.add(new ChargeController(12, 30, 150, 420));
+        chargeControllers.add(new ChargeController(24, 30, 150, 840));
+        chargeControllers.add(new ChargeController(48, 30, 150, 1650));
+        chargeControllers.add(new ChargeController(12, 40, 150, 570));
+        chargeControllers.add(new ChargeController(24, 40, 150, 1130));
+        chargeControllers.add(new ChargeController(48, 40, 150, 2270));
+        chargeControllers.add(new ChargeController(12, 50, 150, 700));
+        chargeControllers.add(new ChargeController(24, 50, 150, 1400));
+        chargeControllers.add(new ChargeController(48, 50, 150, 2800));
+        chargeControllers.add(new ChargeController(12, 60, 150, 900));
+        chargeControllers.add(new ChargeController(24, 60, 150, 1700));
+        chargeControllers.add(new ChargeController(48, 60, 150, 3400));
+        chargeControllers.add(new ChargeController(12, 10, 75));
+        chargeControllers.add(new ChargeController(12, 10, 75));
+        chargeControllers.add(new ChargeController(12, 10, 75));
+        chargeControllers.add(new ChargeController(12, 10, 75));
+        chargeControllers.add(new ChargeController(12, 10, 75));
+        chargeControllers.add(new ChargeController(12, 10, 75));
+        chargeControllers.add(new ChargeController(12, 10, 75));
+        chargeControllers.add(new ChargeController(12, 10, 75));
+        chargeControllers.add(new ChargeController(12, 10, 75));
+        chargeControllers.add(new ChargeController(12, 10, 75));
+        chargeControllers.add(new ChargeController(12, 10, 75));
+        chargeControllers.add(new ChargeController(12, 10, 75));
+        chargeControllers.add(new ChargeController(12, 10, 75));
+        chargeControllers.add(new ChargeController(12, 10, 75));
+        chargeControllers.add(new ChargeController(12, 10, 75));
+        chargeControllers.add(new ChargeController(12, 10, 75));
+        chargeControllers.add(new ChargeController(12, 10, 75));
+        chargeControllers.add(new ChargeController(12, 10, 75));
+        chargeControllers.add(new ChargeController(12, 10, 75));
+        chargeControllers.add(new ChargeController(12, 10, 75));
+        chargeControllers.add(new ChargeController(12, 10, 75));
+        chargeControllers.add(new ChargeController(12, 10, 75));
         return chargeControllers;
     }
 }
