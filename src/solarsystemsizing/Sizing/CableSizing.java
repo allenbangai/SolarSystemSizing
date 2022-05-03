@@ -20,6 +20,9 @@ public class CableSizing {
         this.cable = cable;
     }
 
+    public CableSizing() {
+    }
+
     /**
      * @return the batteryCableLength
      */
