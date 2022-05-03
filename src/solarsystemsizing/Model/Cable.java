@@ -4,9 +4,9 @@ public class Cable {
     private String cableClass;
     private float resistivity;
 
-    public Cable(String cableClass, float resistivity) {
+    public Cable(String cableClass, double d) {
         this.cableClass = cableClass;
-        this.resistivity = resistivity;
+        this.resistivity = d;
     }
 
     /**

@@ -200,4 +200,11 @@ public class Store {
         chargeControllers.add(new ChargeController(24, 100, 300, 6000));
         return chargeControllers;
     }
+
+    public static ArrayList<Cable> getCables(){
+        ArrayList<Cable> cables = new ArrayList<>();
+        cables.add(new Cable("Copper", 0.0000000172));
+        cables.add(new Cable("Alluminium", 0.0000000265));
+        return cables;
+    }
 }
