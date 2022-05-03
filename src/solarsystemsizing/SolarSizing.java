@@ -4,6 +4,7 @@ import java.util.*;
 
 import solarsystemsizing.Model.*;
 import solarsystemsizing.Sizing.*;
+import solarsystemsizing.Util.Helper;
 import solarsystemsizing.Util.Store;
 
 /**
@@ -24,10 +25,12 @@ public class SolarSizing {
      */
     public static void main(String[] args) {
         Total total;
+        Helper helper = new Helper();
         PanelSizing panelSizing = new PanelSizing();
         InverterSizing inverterSizing =  new InverterSizing();
         BatterySizing batterySizing = new BatterySizing();
         ChargeControllerSizing chargeControllerSizing = new ChargeControllerSizing();
+        CableSizing cableSizing = new CableSizing();
 
         //variables here
         double stmMaxEnergy = 0;
@@ -47,6 +50,7 @@ public class SolarSizing {
                 inverterSizing = new InverterSizing(Store.getInverters(), (int) stmMaxPower);
                 batterySizing = new BatterySizing(Store.getBatteries(), stmMaxEnergy, inverterSizing.getInverter());
                 chargeControllerSizing = new ChargeControllerSizing(inverterSizing, panelSizing, Store.getChargeControllers());
+                cableSizing = new CableSizing(7, 15, chargeControllerSizing, helper.validCable("Copper"));
                 break;
             case 2:
                 System.out.println("Here, you will have the sizing of your system"
@@ -62,6 +66,7 @@ public class SolarSizing {
                 batterySizing = new BatterySizing(Store.getBatteries(), stmMaxEnergy, inverterSizing.getInverter());
                 batterySizing.setBatteryVoltage(12);
                 chargeControllerSizing = new ChargeControllerSizing(inverterSizing, panelSizing, Store.getChargeControllers());
+                cableSizing = new CableSizing(7, 15, chargeControllerSizing, helper.validCable("Copper"));
                 break;
             case 3:
                 System.out.println("Here, you will have the sizing of your system from the total individual"
@@ -79,5 +84,6 @@ public class SolarSizing {
         System.out.println(inverterSizing.toString());
         System.out.println(batterySizing.toString());
         System.out.println(chargeControllerSizing.toStringResult());
+        System.out.println(cableSizing.toString());
     }
 }
