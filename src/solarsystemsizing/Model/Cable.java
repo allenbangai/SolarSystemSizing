@@ -1,25 +1,25 @@
 package solarsystemsizing.Model;
 
 public class Cable {
-    private String cableClass;
-    private float resistivity;
+    private String cableName;
+    private double resistivity;
 
-    public Cable(String cableClass, double d) {
-        this.cableClass = cableClass;
-        this.resistivity = d;
+    public Cable(String cableName, double resistivity) {
+        this.cableName = cableName;
+        this.resistivity = resistivity;
     }
 
     /**
      * @return String return the cableClass
      */
-    public String getCableClass() {
-        return cableClass;
+    public String getCableName() {
+        return cableName;
     }
 
     /**
      * @return float return the resistivity
      */
-    public float getResistivity() {
+    public double getResistivity() {
         return resistivity;
     }
 
