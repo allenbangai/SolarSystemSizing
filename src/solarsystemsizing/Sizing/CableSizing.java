@@ -1,5 +1,7 @@
 package solarsystemsizing.Sizing;
 
+import java.text.DecimalFormat;
+
 import solarsystemsizing.Model.Cable;
 
 public class CableSizing {
@@ -7,6 +9,7 @@ public class CableSizing {
     private float panelCableleLength;
     private ChargeControllerSizing controllerSizing;
     private Cable cable;
+    private static final double multiplier = 1000000;
 
     /**
      * @param batteryCableLength
@@ -56,7 +59,7 @@ public class CableSizing {
      * @return
      */
     public double getBatteryCrossArea(){
-        return (getCable().getResistivity() * controllerSizing.getBatteriesChargingCurrent() * getBatteryCableLength()) 
+        return (multiplier * getCable().getResistivity() * controllerSizing.getBatteriesChargingCurrent() * getBatteryCableLength()) 
             / controllerSizing.getSystemDCVoltage();
     }
 
@@ -65,7 +68,7 @@ public class CableSizing {
      * @return
      */
     public double getPanelCrossArea(){
-        return (getCable().getResistivity() * controllerSizing.getPanelSCCurrent() * getPanelCableleLength()) 
+        return (multiplier * getCable().getResistivity() * controllerSizing.getPanelSCCurrent() * getPanelCableleLength()) 
             / controllerSizing.getPanelOCVoltage();
     }
 
@@ -93,13 +96,14 @@ public class CableSizing {
      */    
     @Override
     public String toString() {
+        DecimalFormat df = new DecimalFormat("#.###");
         return "\nThe Cable Sizing parameters are calculated as follows {" +
-            "\n The length of battery cable from ChargeController to Batteries and From Batteries to Inverter= '" + getBatteryCableLength() + 
-            "m',\n The diameter of battery cable= '" + getBatteryCableDiameter() + 
-            "mm',\n The cross sectional area of battery cable= '" + getBatteryCrossArea() + 
-            "mm2',\n The length of panels from panel array to chargeController= '" + getPanelCableleLength() + 
-            "m',\n The diameter of panel cable= '" + getPanelCableDiameter() + 
-            "mm',\n The cross sectional area of panel cables= '" + getPanelCrossArea() + 
+            "\n The length of battery cable from ChargeController to Batteries and From Batteries to Inverter= '" + df.format(getBatteryCableLength()) + 
+            "m',\n The diameter of battery cable= '" + df.format(getBatteryCableDiameter()) + 
+            "mm',\n The cross sectional area of battery cable= '" + df.format(getBatteryCrossArea()) + 
+            "mm2',\n The length of panels from panel array to chargeController= '" + df.format(getPanelCableleLength()) + 
+            "m',\n The diameter of panel cable= '" + df.format(getPanelCableDiameter()) + 
+            "mm',\n The cross sectional area of panel cables= '" + df.format(getPanelCrossArea()) + 
             "mm2'\n}";
     }
 }
