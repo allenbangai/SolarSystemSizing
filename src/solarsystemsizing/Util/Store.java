@@ -30,6 +30,7 @@ public class Store {
         panels.add(new Panel(250, 24, 36));
         panels.add(new Panel(275, 24, 36));
         panels.add(new Panel(300, 24, 36));
+        panels.add(new Panel(330, 24, 36));
         panels.add(new Panel(350, 24, 36));
         return panels;
     }

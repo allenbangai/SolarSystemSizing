@@ -9,6 +9,13 @@
             "name": "Launch SolarSizing",
             "request": "launch",
             "mainClass": "solarsystemsizing.SolarSizing",
+            "projectName": "SolarSystemSizing_ec9872a0"
+        },
+        {
+            "type": "java",
+            "name": "Launch SolarSizing",
+            "request": "launch",
+            "mainClass": "solarsystemsizing.SolarSizing",
             "projectName": "SolarSystemSizing_78874fcf"
         },
         {
