@@ -32,24 +32,35 @@ public class Panel {
     }
 
     /**
-     * 
-     * @return
+     * This method returns the power of the panel with type int
+     * @return {@link #power}
      */
     public int getPower() {
         return power;
     }
 
+    /**
+     * This method returns the voltage of the panel with type int
+     * @return {@link #voltage}
+     */
     public int getVoltage() {
         return voltage;
     }
 
+    /**
+     * This method returns the nominal voltage different of the voltage of 
+     * the panel and of type type int
+     * @return {@link #voltage}
+     */
     public int getNominalVoltage() {
         return nominalVoltage;
     }
 
+    /**
+     * This method returns the nominal current of the panel with type int
+     * @return {@link #getPower()} / {@link #getNominalVoltage()}
+     */
     public int getNominalCurent(){
         return getPower() / getNominalVoltage();
     }
-
-    //TODO 4: Document code in this class Panel.java
 }
