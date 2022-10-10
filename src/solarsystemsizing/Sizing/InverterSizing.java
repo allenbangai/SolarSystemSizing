@@ -11,6 +11,13 @@ import solarsystemsizing.Model.Inverter;
  * @version 1.0
  * 
  * @author Kamadje Allen
+ * 
+ * @descrition
+ * This class incharge of sizing an inverter for our solar system
+ * It takes in all the required properties needed to size our inverter using 
+ * it class constructors. Hence, using it methods, it provides some specific information 
+ * on which type if inverter should be used for the system in question, what of their specifific 
+ * characteristics, and how they should be used.
  */
 public class InverterSizing {
     private ArrayList<Inverter> inverters = new ArrayList<>();
@@ -21,20 +28,24 @@ public class InverterSizing {
     private static final int inverterVoltage3 = 48;
 
     /**
-     * 
-     * @param inverters
-     * @param systemMaxPower
+     * This constructor takes a list of inverters and the maximum power required by the appliance.
+     * @param inverters {@link #inverters} of type ArraList<Inverter>
+     * @param systemMaxPower {@link #systemMaxPower} of type int
      */
     public InverterSizing(ArrayList<Inverter> inverters, int systemMaxPower) {
         this.inverters = inverters;
         this.systemMaxPower = systemMaxPower;
     }    
 
+    /**
+     * Empty constructor of class inverter to have an instance of sizing an object with no properties
+     * for default instantiation of the class object
+     */
     public InverterSizing() {
     }
 
     /**
-     * @return int return the systemMaxPower
+     * @return  return {@link #systemMaxPower} of type int 
      */
     public int getSystemMaxPower() {
         return systemMaxPower;
