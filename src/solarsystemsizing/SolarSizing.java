@@ -8,7 +8,8 @@ import solarsystemsizing.Util.Helper;
 import solarsystemsizing.Util.Store;
 
 /**
- *
+ * @description
+ * Class containing main to design and size a solar system according to user needs
  * @since 1.0
  * 
  * @version 1.0
