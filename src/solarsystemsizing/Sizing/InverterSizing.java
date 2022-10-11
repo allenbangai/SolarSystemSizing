@@ -52,16 +52,16 @@ public class InverterSizing {
     }
 
     /***
-     * 
-     * @param inverterVoltage
+     * Instatiate the inverter DC input voltage for the InverterSizing Object
+     * @param takes {@link #inverterVoltage} of type int
      */
     public void setInverterVoltage(int inverterVoltage){
         this.inverterVoltage = inverterVoltage;
     }
 
     /**
-     * 
-     * @return
+     * Determing an appriopate inverter voltage according to the system {@link #getSystemMaxPower()}
+     * @return return {@link #inverterVoltage} of type int
      */
     private int getInverterVoltage(){
         if(getSystemMaxPower() > 0 && getSystemMaxPower() <= 1000 && inverterVoltage == 0){
@@ -75,8 +75,11 @@ public class InverterSizing {
     }
 
     /**
-     * 
-     * @return
+     * Return the actual inverter required by the system.
+     * It is a pivate method and called in the method {@link #getInverter()}.
+     * When an empty contructor of the class {@link #InverterSizing()} is called to instantiate the object, 
+     * this method returns an Inverter with ratedWatt = 0 and DCinput = 0.
+     * @return Returns an oject of type Inverter.
      */
     private Inverter findInverter(){
         Inverter actualInverter = new Inverter(0, 0);
