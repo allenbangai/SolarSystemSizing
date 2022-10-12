@@ -291,6 +291,4 @@ public class Inverter {
         return (int) Math.sqrt(a);
     }
     
-    //TODO 3: Complete documentation for class Inverter
-    
 }

@@ -51,7 +51,7 @@ public class Helper {
     public Cable validCable(String cableName){
         Cable actualCable = new Cable("Copper", 0.0000000172);
         for (Cable cable : Store.getCables()) {
-            if(cableName.equals(cable.getCableName())){
+            if(cableName.equals(cable.getCableType())){
                 actualCable = cable;
             }
         }
