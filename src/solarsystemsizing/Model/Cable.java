@@ -23,6 +23,7 @@ public class Cable {
      * The {@link #cableType} entered here is of type String
      * 
      * @param resistivity
+     * The {@link #resistivity} entered here is of type double (decimal number)
      */
     public Cable(String cableType, double resistivity) {
         this.cableType = cableType;
