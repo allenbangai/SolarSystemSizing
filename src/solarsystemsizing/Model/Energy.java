@@ -14,8 +14,8 @@ public class Energy extends Power{
     /**
      * Instantiate parameters for a load from class Tpower.
      * Instantiate parameters for total hours of use of load per day in Hours (H).
-     * S.I.U of hours is H.
      * @param numOfHours
+     * The {@link #numOfHours} entered is of hours integer and S.I.U of hours is H.
      * @param numOfLoad
      * The {@link #numOfLoad} entered here is of type integer and has no S.I.U.
      * @param powerOfLoad 
@@ -29,8 +29,8 @@ public class Energy extends Power{
     /**
      * Instantiate parameters for a load from class Tpower.
      * Instantiate parameters for total hours of use of load per day in Hours (H).
-     * S.I.U of hours is H.
      * @param numOfHours
+     * The {@link #numOfHours} entered is of hours integer and S.I.U of hours is H.
      * @param numOfLoad
      * The {@link #numOfLoad} entered here is of type integer and has no S.I.U.
      * @param powerOfLoad 
