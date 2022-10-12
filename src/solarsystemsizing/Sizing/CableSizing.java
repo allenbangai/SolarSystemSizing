@@ -91,9 +91,9 @@ public class CableSizing {
     }
 
     /**
+     * @return
      * The override {@link #toString()} return a string allowing you know everything you need to know about
      * the class CableSizing.java.
-     * @return
      */ 
     @Override
     public String toString() {

@@ -110,9 +110,9 @@ public class ChargeControllerSizing {
     }
 
     /**
+     * @return
      * The override {@link #toString()} return a string allowing you know all the  properties of a charge controller
      * sized by the PV system.
-     * @return
      */ 
     @Override
     public String toString() {
@@ -125,9 +125,9 @@ public class ChargeControllerSizing {
     }
 
     /**
+     * @return
      * The override {@link #toString()} return a string providing the calcuted results needed for to provide a 
      * charge controller for the PV system. 
-     * @return
      */ 
     public String toStringResult() {
         return "\nThe Charge Controller parameters calculated are as follows {" +

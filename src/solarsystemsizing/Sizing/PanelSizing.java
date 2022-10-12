@@ -183,8 +183,10 @@ public class PanelSizing {
     }
 
     /**
-     * prints all neccesary data from sizing solar panel
-     */
+     * @return
+     * The override {@link #toString()} return a string allowing you know all the  properties of the panel required to
+     * size the PV system.
+     */ 
     @Override
     public String toString() {
         return "\nThe Panels Sizing is as folows: {" +

@@ -134,9 +134,9 @@ public class InverterSizing {
     }
 
     /**
-     * This method returns all the data required of the chosen inverter of the system.
+     * This method returns all the data (in string) required of the chosen inverter of the system.
      * @return
-     * Return string of sized inverter properties.
+     * Return string of the sized inverter properties.
      */
     @Override
     public String toString() {
