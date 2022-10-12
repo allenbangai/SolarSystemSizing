@@ -125,13 +125,19 @@ public class InverterSizing {
     }
 
     /**
-     * 
+     * Return the actual inverter required by the system from method {@link #findInverter()}.
      * @return
+     * The an object of type Inverter
      */
     public Inverter getInverter(){
         return findInverter();
     }
 
+    /**
+     * This method returns all the data required of the chosen inverter of the system.
+     * @return
+     * Return string of sized inverter properties.
+     */
     @Override
     public String toString() {
         return "\nThe Inverter Sizing is as folows {" +
