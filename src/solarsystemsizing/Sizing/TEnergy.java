@@ -21,36 +21,68 @@ public class TEnergy extends Total{
     private int tEnergy;
     private int hours;
 
+    /**
+     * 
+     * @param energys
+     */
     public TEnergy(ArrayList<Energy> energys) {
         this.energys = energys;
     }
 
+    /**
+     * 
+     * @param tEnergy
+     * @param hours
+     */
     public TEnergy(int tEnergy, int hours) {
         this.tEnergy = tEnergy;
         this.hours = hours;
     }
 
+    /**
+     * 
+     * @return
+     */
     public int getHours(){
         return hours;
     }
 
+    /**
+     * 
+     * @return
+     */
     public int gettEnergy() {
         return tEnergy;
     }
 
+    /**
+     * 
+     * @param tEnergy
+     */
     public void settEnergy(int tEnergy) {
         this.tEnergy = tEnergy;
     }
 
+    /**
+     * 
+     * @return
+     */
     public ArrayList<Energy> getEnergys() {
         return energys;
     }
 
+    /**
+     * 
+     * @param tEnergys
+     */
     public void setEnergys(ArrayList<Energy> tEnergys) {
         this.energys = tEnergys;
     }
 
     private int val1 = 0, val2 = 0;
+    /**
+     * 
+     */
     private void toHelp(){
         for (Energy energy : energys) {
             val1 = val1 + energy.getEnergy();
@@ -59,6 +91,9 @@ public class TEnergy extends Total{
 
     }
 
+    /**
+     * 
+     */
     @Override
     public double totalE() {
         if (getEnergys().isEmpty()) {
@@ -69,6 +104,9 @@ public class TEnergy extends Total{
         }
     }
     
+    /**
+     * 
+     */
     @Override
     public double totalP(){
         if(getEnergys().isEmpty()){

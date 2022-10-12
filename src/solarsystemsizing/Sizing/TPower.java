@@ -18,16 +18,30 @@ public class TPower extends Total{
     private int tPower;
     private int hours; //total harmonized hours of autonomy or utility of all loads
 
+    /**
+     * 
+     * @param powers
+     * @param hours
+     */
     public TPower(ArrayList<Power> powers, int hours) {
         this.powers = powers;
         this.hours = hours;
     }
 
+    /**
+     * 
+     * @param tPower
+     * @param hours
+     */
     public TPower(int tPower, int hours) {
         this.tPower = tPower;
         this.hours = hours;
     }
 
+    /**
+     * 
+     * @return
+     */
     public int gettPower() {
         return tPower;
     }
@@ -41,17 +55,28 @@ public class TPower extends Total{
         return hours;
     }
 
+    /**
+     * 
+     * @return
+     */
     public ArrayList<Power> getPowers() {
         return powers;
     }
 
     private int val1 = 0;
+    /**
+     * 
+     */
     private void toHelp(){
         for(Power power : getPowers()){
             val1 = val1 + power.getPower();
         }
     }
     
+    /**
+     * 
+     * @return
+     */
     private int returnTEnergy(){
         if (getPowers().isEmpty()) {
             return gettPower() * getHours();
@@ -61,11 +86,17 @@ public class TPower extends Total{
         }
     }
     
+    /**
+     * 
+     */
     @Override
     public double totalE() {
         return (double) (super.getVal() * returnTEnergy());
     }
 
+    /**
+     * 
+     */
     @Override
     public double totalP() {
         if(getPowers().isEmpty()){
