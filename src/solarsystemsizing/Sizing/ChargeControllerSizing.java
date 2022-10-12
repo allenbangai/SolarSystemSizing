@@ -109,6 +109,11 @@ public class ChargeControllerSizing {
         //implementing code in ChargeController.java part 4: declaring and implementing getChargeControlloer() method part 1
     }
 
+    /**
+     * The override {@link #toString()} return a string allowing you know all the  properties of a charge controller
+     * sized by the PV system.
+     * @return
+     */ 
     @Override
     public String toString() {
         return "\nThe Charge Controller Sizing is as follows {" +
@@ -119,6 +124,11 @@ public class ChargeControllerSizing {
             "A'\n}\n";
     }
 
+    /**
+     * The override {@link #toString()} return a string providing the calcuted results needed for to provide a 
+     * charge controller for the PV system. 
+     * @return
+     */ 
     public String toStringResult() {
         return "\nThe Charge Controller parameters calculated are as follows {" +
             "\n The system DC voltage= '" + getSystemDCVoltage() + 

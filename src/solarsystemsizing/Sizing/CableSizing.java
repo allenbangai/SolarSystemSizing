@@ -90,10 +90,11 @@ public class CableSizing {
         return Math.pow(val, 0.5);
     }
 
-    /** 
-     * (non-Javadoc)
-     * @see java.lang.Object#toString()
-     */    
+    /**
+     * The override {@link #toString()} return a string allowing you know everything you need to know about
+     * the class CableSizing.java.
+     * @return
+     */ 
     @Override
     public String toString() {
         DecimalFormat df = new DecimalFormat("#.###");

@@ -146,7 +146,7 @@ public class BatterySizing {
     }
 
     /**
-     * The override {@link #toString()} prints you know everything you need to know about
+     * The override {@link #toString()} return a string allowing you know everything you need to know about
      * the class BattterySizing.java.
      * @return
      */
