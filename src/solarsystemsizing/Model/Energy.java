@@ -17,7 +17,9 @@ public class Energy extends Power{
      * S.I.U of hours is H.
      * @param numOfHours
      * @param numOfLoad
+     * The {@link #numOfLoad} entered here is of type integer and has no S.I.U.
      * @param powerOfLoad 
+     * The {@link #powerOfLoad} entered here is of type integer and has S.I.U in Watt(W).
      */
     public Energy(int numOfHours, int numOfLoad, int powerOfLoad) {
         super(numOfLoad, powerOfLoad);
@@ -30,7 +32,11 @@ public class Energy extends Power{
      * S.I.U of hours is H.
      * @param numOfHours
      * @param numOfLoad
+     * The {@link #numOfLoad} entered here is of type integer and has no S.I.U.
      * @param powerOfLoad 
+     * The {@link #powerOfLoad} entered here is of type integer and has S.I.U in Watt(W).
+     * @param nameOfLoad
+     * The {@link #nameOfLoad} entered here is of type string and has no S.I.U.
      */
     public Energy(int numOfHours, int numOfLoad, int powerOfLoad, String nameOfLoad) {
         super(numOfLoad, powerOfLoad, nameOfLoad);

@@ -1,7 +1,12 @@
 package solarsystemsizing.Model;
 
 /**
- *
+ * This class Power.java describes the characteristics of the different loads that can be used to sizing a PV system.
+ * To size a PV system, we need to know the number of loads, power of load and the name of that load. Hence, our class has 
+ * three data variables which are {@link #numOfLoad}, {@link #powerOfLoad}, and {@link #nameOfLoad}.
+ * 
+ * Hence, the following three data variables are the characteristics used to discribe the a load when sizing a PV system
+ * and the object of type power is instantiated using this data variables.
  * @since year 2022
  * 
  * @version 1.0
@@ -13,11 +18,12 @@ public class Power {
     private int powerOfLoad;
     private String nameOfLoad;
 
-    /***
-     * Instantiates parameters for a load so the total number of load can be return from object
-     * S.I.U of Load is Watt(W).
+    /**
+     * Instantiates data variables for a load to obtain an object of type power with number and power of load
      * @param numOfLoad
+     * The {@link #numOfLoad} enter here is of type integer and has no S.I.U.
      * @param powerOfLoad 
+     * The {@link #powerOfLoad} enter here is of type integer and has S.I.U in Watt(W).
      */
     public Power(int numOfLoad, int powerOfLoad) {
         this.numOfLoad = numOfLoad;
@@ -25,10 +31,13 @@ public class Power {
     }
 
     /**
-     * 
+     * Instantiates data variables for a load to obtain an object of type power with number and power of load
      * @param numOfLoad
-     * @param powerOfLoad
+     * The {@link #numOfLoad} entered here is of type integer and has no S.I.U.
+     * @param powerOfLoad 
+     * The {@link #powerOfLoad} entered here is of type integer and has S.I.U in Watt(W).
      * @param nameOfLoad
+     * The {@link #nameOfLoad} entered here is of type string and has no S.I.U.
      */
     public Power(int numOfLoad, int powerOfLoad, String nameOfLoad) {
         this.numOfLoad = numOfLoad;
