@@ -34,6 +34,7 @@ public class Battery {
     /**
      * 
      * @return
+     * return battery {@link #voltage} of type interger
      */
     public int getVoltage() {
         return voltage;
@@ -42,6 +43,7 @@ public class Battery {
     /**
      * 
      * @return
+     * return battery storage capacity in {@link #ampereHour} and of type interger
      */
     public int getAmpereHour() {
         return ampereHour;
@@ -50,10 +52,9 @@ public class Battery {
     /**
      * 
      * @return
+     * return battery storage capaity (energy) of type ({@link #voltage} * {@link #ampereHour}) and of return type interger
      */
     public int getEnergy(){
         return voltage * ampereHour;
     }
-
-    //TODO 4: Document code in this class
 }
