@@ -5,7 +5,7 @@ import solarsystemsizing.Model.Power;
 import java.util.ArrayList;
 
 /**
- * This class Battery.java describes the characteristics of a battery used in sizing 
+ * This class TEnergy.java describes the characteristics of a battery used in sizing 
  * solar systems... As we all know, a battery both has the Energy it stores in Ampere hour
  * (Ah) and the voltage at which it is either charged or discharged measured in volts (VDC).
  * This characteristics are used to describe an object of a battery so we could this class to 

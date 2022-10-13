@@ -5,17 +5,18 @@ import java.text.DecimalFormat;
 import solarsystemsizing.Model.Cable;
 
 /**
+ * @since year 2022
+ * 
+ * @version 1.0
+ * 
+ * @author Kamadje Allen
+ * @description
  * This class Battery.java describes the characteristics of a battery used in sizing 
  * solar systems... As we all know, a battery both has the Energy it stores in Ampere hour
  * (Ah) and the voltage at which it is either charged or discharged measured in volts (VDC).
  * This characteristics are used to describe an object of a battery so we could this class to 
  * describe different types of objects of batteries. This characteristics are {@link #voltage} 
  * and {@link #ampereHour}.
- * @since year 2022
- * 
- * @version 1.0
- * 
- * @author Kamadje Allen
  */
 public class CableSizing {
     private float batteryCableLength;

@@ -1,17 +1,18 @@
 package solarsystemsizing.Model;
 
 /**
+ * @since year 2022
+ * 
+ * @version 1.0
+ * 
+ * @author Kamadje Allen
+ * @description
  * This class Power.java describes the characteristics of the different loads that can be used to sizing a PV system.
  * To size a PV system, we need to know the number of loads, power of load and the name of that load. Hence, our class has 
  * three data variables which are {@link #numOfLoad}, {@link #powerOfLoad}, and {@link #nameOfLoad}.
  * 
  * Hence, the following three data variables are the characteristics used to discribe the a load when sizing a PV system
  * and the object of type power is instantiated using this data variables.
- * @since year 2022
- * 
- * @version 1.0
- * 
- * @author Kamadje Allen
  */
 public class Power {
     private int numOfLoad;
